@@ -11,7 +11,7 @@ class LoggedInNavbar extends React.Component {
     return (
         <div className="navbar-greeting">
           <h2>Hello, {this.props.currentUser.username}</h2>
-          <img src={this.props.currentUser.img_url} className="profile-pic"></img>
+          <img src={this.props.currentUser.img_url} alt="Avatar" className="profile-pic"></img>
             &nbsp;
             &nbsp;
           <button onClick={this.props.logout} className="logout-button">Logout</button>

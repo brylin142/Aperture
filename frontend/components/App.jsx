@@ -15,7 +15,7 @@ import {
 
 const App = () => {
   return (
- <div>    
+ <div className="app">    
     <Switch>
       
       <AuthRoute path='/login' component={NavbarContainer} />
