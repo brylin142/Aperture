@@ -40,27 +40,32 @@
    width: 100%;
    height: auto;
  }
+ */
  
  button,
  input[type="submit"] {
    cursor: pointer;
- } */
+ }
 
  /*----------------------------------------------------------------------------------------*/
 
  body, html {
-  height: 100%;
   margin: 0;
   /* background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80); */
   /* Full height */
   font-family: 'Montserrat', sans-serif;
-  z-index: -2;
+  z-index: -10;
+}
+
+.vsc-initialized {
+  z-index: -5;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: -1;
 }
 
 .splash {
@@ -100,6 +105,7 @@
   padding-right: 36px;
   padding-left: 36px;
   transition: .5s;
+  z-index: 4;
 }
 
 .splash-signup:hover {
@@ -133,7 +139,8 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background: rgba(48, 48, 48, 0.247);
 }
 
@@ -146,10 +153,13 @@
   justify-content: space-between;
   align-items: baseline;
   color: white;
+  padding-right: 10px;
 }
 
 .login {
   background-color: black;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .profile-pic {
@@ -192,6 +202,27 @@
   text-decoration: none;
 }
 
+.auth-wrapper {
+  background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
+  /* Full height */
+  /* height: 100%;  */
+  width: 100vw;
+  height: calc(100vh);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -1;
+}
+
 .auth-form {
   border: 1px solid black;
   background: rgba(48, 48, 48, 0.247);
@@ -201,6 +232,7 @@
   display: flex;
   justify-content: center;
   color: white;
+  margin-top: 82px;
 }
 
 .session-submit {
