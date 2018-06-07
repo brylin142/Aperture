@@ -9,7 +9,7 @@ class Splash extends React.Component {
   render() {
     return (
       <div className='splash'>
-
+        <h1>Find your inspiration</h1>
       </div>
     )
   }

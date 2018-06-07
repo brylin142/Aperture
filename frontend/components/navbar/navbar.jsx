@@ -30,7 +30,7 @@ class Navbar extends React.Component {
 
     return (
       <header className="navbar-header">
-        <Link to='/'><h1>Aperture</h1></Link>
+        <Link to='/'><h1 className="title">Aperture</h1></Link>
         {greeting}
       </header>
     )
