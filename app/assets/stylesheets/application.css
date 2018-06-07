@@ -93,7 +93,6 @@
   align-items: baseline;
   padding: 10px;
   background: rgba(48, 48, 48, 0.247);
-  z-index: 10;
 }
 
 .navbar-header a {
@@ -105,6 +104,11 @@
   justify-content: space-between;
   align-items: baseline;
   color: white;
+}
+
+.profile-pic {
+  height: 30px;
+  width: 30px;
 }
 
 .navbar-login {
@@ -150,6 +154,7 @@
   width: 300px;
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .session-submit {

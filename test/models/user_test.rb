@@ -8,10 +8,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  img_url         :string
 #  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
+#  img_url         :string           default("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
 #
 
 require 'test_helper'
