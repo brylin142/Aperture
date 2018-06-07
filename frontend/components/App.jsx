@@ -13,10 +13,15 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-const App = () => (
-  <div>
-    <NavbarContainer />
-    
+const App = () => {
+  return (
+ <div>    
+    <Switch>
+      
+      <AuthRoute path='/login' component={NavbarContainer} />
+      <AuthRoute path='/signup' component={NavbarContainer} />
+      <Route path='/' component={NavbarContainer} />
+    </Switch>
     <Switch>
       
       <AuthRoute path='/login' component={LoginFormContainer} />
@@ -25,6 +30,7 @@ const App = () => (
     </Switch>
     
   </div>
-);
+  );
+};
 
 export default App;

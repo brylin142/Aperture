@@ -106,6 +106,10 @@
   color: white;
 }
 
+.login {
+  background-color: black;
+}
+
 .profile-pic {
   height: 30px;
   width: 30px;
@@ -137,13 +141,12 @@
   color: grey;
 }
 
-.login {
+.login-link {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   font-weight: 900;
   color: white;
-  border-radius: 3px;
   text-decoration: none;
 }
 

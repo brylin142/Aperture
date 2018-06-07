@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import LoggedInNavbarContainer from './logged_in_navbar_container'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -9,31 +10,30 @@ class Navbar extends React.Component {
 
   render() {
     let greeting;
-
+    const title = <Link to='/'><h1 className="title">Aperture</h1></Link>
     if (!this.props.currentUser) {
-      greeting = 
+      greeting = () => (
+       <header className="navbar-header">
+       {title}
         <div className="navbar-login">
-            <Link to='/login' className="login">Log In</Link>
+            <Link to='/login' className="login-link">Log In</Link>
             &nbsp;
             &nbsp;
             <Link to='/signup' className="signup">Sign Up</Link>
-        </div>;
+        </div>
+      </header>
+      )
     } else {
-      greeting =
-      <div className="navbar-greeting">
-        <h2>Hello, {this.props.currentUser.username}</h2>
-        <img src={this.props.currentUser.img_url} className="profile-pic"></img>
-          &nbsp;
-          &nbsp;
-        <button onClick={this.props.logout} className="logout-button">Logout</button>
-      </div>
+      greeting = () => (
+      <header className="navbar-header login">
+        {title}
+        <LoggedInNavbarContainer />
+      </header>
+      )
     }
 
     return (
-      <header className="navbar-header">
-        <Link to='/'><h1 className="title">Aperture</h1></Link>
-        {greeting}
-      </header>
+      greeting()
     )
   }
 }
