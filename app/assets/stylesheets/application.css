@@ -16,7 +16,7 @@
  body, html {
   height: 100%;
   margin: 0;
-  background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
+  /* background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80); */
   /* Full height */
   font-family: 'Montserrat', sans-serif;
   height: 100%; 
@@ -30,16 +30,22 @@
 .splash {
   /* width: 800px;
   height: 800px; */
-  /* background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80); */
+  background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
   /* Full height */
-  /* height: 100%;  */
-  /* width: 100%; */
+  /* height: 100%; 
+  width: 100%; */
+  height: calc(100vh);
   /* Center and scale the image nicely */
-  /* background-position: center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
   color: white;
   text-align: center;
+  vertical-align: center;
+}
+
+.splash-tagline {
+  margin-top: 0px;
 }
 
 .splash-signup {
@@ -87,6 +93,7 @@
   align-items: baseline;
   padding: 10px;
   background: rgba(48, 48, 48, 0.247);
+  z-index: 10;
 }
 
 .navbar-header a {
@@ -97,6 +104,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  color: white;
 }
 
 .navbar-login {
@@ -135,11 +143,31 @@
   text-decoration: none;
 }
 
-.login-form-box {
-  height: 200px;
-  width: 200px;
+.auth-form {
   border: 1px solid black;
   background: rgba(48, 48, 48, 0.247);
+  text-align: center;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.session-submit {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.login-input {
+  width: 200px;
+  padding: 5px 5px;
+  margin: 5px;
 }
 
 .login-form-box {

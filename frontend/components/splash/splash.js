@@ -10,6 +10,7 @@ class Splash extends React.Component {
   render() {
     return (
       <div className='splash'>
+        <br/><br/>
         <h1 className="splash-tagline">Find your inspiration</h1>
         <h2>Join the Aperture community and express yoself</h2>
         <br/><br/>

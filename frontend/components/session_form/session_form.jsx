@@ -9,9 +9,14 @@ class SessionForm extends React.Component {
       password: '',
       email: '',
       first_name: '',
-      last_name: ''
+      last_name: '',
+      img_url: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearForm();
   }
 
   update(field) {
@@ -39,94 +44,95 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
-    // if (this.props.formType === 'signup') {
-    //   return (
-    //     <div className="login-form-container">
-    //       <form onSubmit={this.handleSubmit} className="login-form-box">
-    //         Welcome to Aperture!
-    //         <br/>
-    //         Please {this.props.formType}
-    //         {this.renderErrors()}
-    //         <div className="login-form">
-    //           <br/>
-    //           <label>Username:
-    //             <input type="text"
-    //               value={this.state.username}
-    //               onChange={this.update('username')}
-    //               className="login-input"
-    //             />
-    //           </label>
-    //           <br/>
-    //           <label>Password:
-    //             <input type="password"
-    //               value={this.state.password}
-    //               onChange={this.update('password')}
-    //               className="login-input"
-    //             />
-    //           </label>
-    //           <br/>
-    //           <label>Email:
-    //             <input type="text"
-    //               value={this.state.email}
-    //               onChange={this.update('email')}
-    //               className="login-input"
-    //             />
-    //           </label>
-    //           <br/>
-    //           <label>First Name:
-    //             <input type="text"
-    //               value={this.state.firstName}
-    //               onChange={this.update('firstName')}
-    //               className="login-input"
-    //             />
-    //           </label>
-    //           <br/>
-    //           <label>Last Name:
-    //             <input type="text"
-    //               value={this.state.lastName}
-    //               onChange={this.update('lastName')}
-    //               className="login-input"
-    //             />
-    //           </label>
-    //           <br/>
-    //           <input className="session-submit" type="submit" value={this.props.formType} />
-    //         </div>
-    //       </form>
-    //     </div>
-    //   );
-    // } else {
+    const shared_form_section = () => {
       return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to Aperture!
-            <br/>
-            Please {this.props.formType}
-            {this.renderErrors()}
-            <div className="login-form">
-              <br/>
-              <label>Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <input className="session-submit" type="submit" value={this.props.formType} />
-            </div>
-          </form>
+      <div className="login-form">
+        <br/>
+        <label>Username:
+          <br/>
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="login-input"
+          />
+        </label>
+        <br/>
+        <label>Password:
+          <br/>
+          <input type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            className="login-input"
+          />
+        </label>
+      </div>
+    )
+  }
+
+    const other_section = () => {
+      return (
+        <div>
+        <label>Email:
+          <br/> 
+          <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+            />
+        </label>
+        <br/>
+        <label>First Name:
+          <br/>
+          <input type="text"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
+            className="login-input"
+          />
+        </label>
+        <br/>
+        <label>Last Name:
+          <br/>
+          <input type="text"
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
+            className="login-input"
+          />
+        </label>
+        <br/>
+        <label>Profile Picture:
+          <br/>
+          <input type="text"
+            value={this.state.img_url}
+            onChange={this.update('img_url')}
+            className="login-input"
+          />
+        </label>
+      </div>
+      )
+    }
+
+    return (
+
+      <div className="auth-form">
+        <div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          <br/>
+          Welcome to Aperture!
+          <br/>
+          Please {this.props.formType}
+          {this.renderErrors()}
+          
+          {shared_form_section()}
+          { this.props.formType === 'Signup' ? other_section() : <br/> }
+          <br/>
+        <input className="session-submit" type="submit" value={this.props.formType} />
+        <br/>
+        <br/>
+
+        </form>
         </div>
-      );
-    // }
+      </div>
+    );
 
     
   }
