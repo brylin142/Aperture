@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
     //             />
     //           </label>
     //           <br/>
-    //           <label>Email:
+    //           <label>First Name:
     //             <input type="text"
     //               value={this.state.firstName}
     //               onChange={this.update('firstName')}
@@ -82,10 +82,10 @@ class SessionForm extends React.Component {
     //             />
     //           </label>
     //           <br/>
-    //           <label>Email:
+    //           <label>Last Name:
     //             <input type="text"
-    //               value={this.state.email}
-    //               onChange={this.update('email')}
+    //               value={this.state.lastName}
+    //               onChange={this.update('lastName')}
     //               className="login-input"
     //             />
     //           </label>

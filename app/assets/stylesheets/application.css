@@ -40,12 +40,43 @@
   background-size: cover; */
   color: white;
   text-align: center;
-  height: 50%;
+}
+
+.splash-signup {
+  font-weight: 900;
+  font-size: 20px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  text-decoration: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 36px;
+  padding-left: 36px;
+  transition: .5s;
+}
+
+.splash-signup:hover {
+  color: grey;
+}
+
+.logout-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  text-decoration: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
+  color: white;
   padding: 10px;
 }
 
@@ -78,24 +109,26 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   background: white;
   color: black;
-  border: 1px solid black;
   border-radius: 3px;
   text-decoration: none;
   padding-top: 7px;
   padding-bottom: 7px;
   padding-right: 18px;
   padding-left: 18px;
+  transition: .5s;
+}
+
+.signup:hover {
+  color: grey;
 }
 
 .login {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   color: white;
   border-radius: 3px;

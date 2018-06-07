@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -9,7 +10,10 @@ class Splash extends React.Component {
   render() {
     return (
       <div className='splash'>
-        <h1>Find your inspiration</h1>
+        <h1 className="splash-tagline">Find your inspiration</h1>
+        <h2>Join the Aperture community and express yoself</h2>
+        <br/><br/>
+        <Link to='/signup' className="splash-signup">Sign Up</Link>
       </div>
     )
   }
