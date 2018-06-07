@@ -12,21 +12,25 @@ class Navbar extends React.Component {
 
     if (!this.props.currentUser) {
       greeting = 
-        <div>
-          <Link to='/login'>Log In</Link>
-          <Link to='/signup'>Sign Up</Link>
+        <div className="navbar-login">
+            <Link to='/login' className="login">Log In</Link>
+            &nbsp;
+            &nbsp;
+            <Link to='/signup' className="signup">Sign Up</Link>
         </div>;
     } else {
       greeting =
-      <div>
+      <div className="navbar-greeting">
         <h2>Hello, {this.props.currentUser.username}</h2>
+          &nbsp;
+          &nbsp;
         <button onClick={this.props.logout}>Logout</button>
       </div>
     }
 
     return (
-      <header>
-        <h1>Aperture</h1>
+      <header className="navbar-header">
+        <Link to='/'><h1>Aperture</h1></Link>
         {greeting}
       </header>
     )
