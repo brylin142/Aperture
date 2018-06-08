@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import { signup, login, logout } from './actions/session_actions';
-import { fetchPhotos, fetchPhoto, createPhoto, updatePhoto, deletePhoto } from './util/photo_api_util'
+import { fetchPhotos, fetchPhoto, createPhoto, updatePhoto, deletePhoto } from './actions/photo_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

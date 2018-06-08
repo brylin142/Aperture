@@ -112,9 +112,9 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div class="auth-wrapper">
+      <div className="auth-wrapper">
       <div className="auth-form">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form className="login-form-box">
           <br/>
           Welcome to Aperture!
           <br/>
@@ -124,10 +124,10 @@ class SessionForm extends React.Component {
           {shared_form_section()}
           { this.props.formType === 'Signup' ? other_section() : <br/> }
           <br/>
-        <input className="session-submit" type="submit" value={this.props.formType} />
+        <input onSubmit={this.handleSubmit} className="session-submit" type="submit" value={this.props.formType} />
         <br/>
         <br/>
-        <button onClick={() => this.props.demoLogin({username: "photolover", password: "qwer0987"})} className="demo-login">Demo Login</button>
+        <button onClick={() => this.props.login({username: "photolover", password: "qwer0987"})} className="demo-login">Demo Login</button>
         <br/>
         <br/>
 
