@@ -29,11 +29,17 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
+    if @photo.destroy
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
   end
 
   private
 
   def photo_params
-    params.require(:photos).permit(:title, :description, :user_id, :img_url)
+    params.require(:photo).permit(:title, :description, :user_id, :img_url)
   end
 end

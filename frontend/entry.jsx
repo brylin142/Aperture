@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import { signup, login, logout } from './actions/session_actions';
+import { fetchPhotos, fetchPhoto, createPhoto, updatePhoto, deletePhoto } from './util/photo_api_util'
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -22,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
-  window.logout = logout;
+  window.fetchPhotos = fetchPhotos
+  window.fetchPhoto = fetchPhoto
+  window.createPhoto = createPhoto
+  window.updatePhoto = updatePhoto
+  window.deletePhoto = deletePhoto
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
