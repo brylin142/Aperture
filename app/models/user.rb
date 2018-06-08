@@ -26,6 +26,8 @@ class User < ApplicationRecord
   validates :password_digest, :email, :first_name, :last_name, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :photos
+
   attr_reader :password
 
   def password=(password)

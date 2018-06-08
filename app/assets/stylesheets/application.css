@@ -51,8 +51,6 @@
 
  body, html {
   margin: 0;
-  /* background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80); */
-  /* Full height */
   font-family: 'Montserrat', sans-serif;
   z-index: -10;
 }
@@ -69,10 +67,7 @@
 }
 
 .splash {
-  /* width: 800px;
-  height: 800px; */
   background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
-  /* Full height */
   /* height: 100%;  */
   width: 100vw;
   height: calc(100vh);
@@ -134,7 +129,6 @@
 }
 
 .navbar-header {
-  /* height: 50px; */
   width: 100vw;
   display: flex;
   justify-content: space-between;
