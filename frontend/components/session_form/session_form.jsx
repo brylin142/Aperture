@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.history.push('/photos'));
   }
 
   renderErrors() {
@@ -124,7 +124,7 @@ class SessionForm extends React.Component {
           {shared_form_section()}
           { this.props.formType === 'Signup' ? other_section() : <br/> }
           <br/>
-        <input onSubmit={this.handleSubmit} className="session-submit" type="submit" value={this.props.formType} />
+        <button onClick={this.handleSubmit} className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
         <br/>
         <br/>
         <button onClick={() => this.props.login({username: "photolover", password: "qwer0987"})} className="demo-login">Demo Login</button>

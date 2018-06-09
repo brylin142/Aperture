@@ -12,6 +12,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import PhotoIndexContainer from './photos/photo_index_container';
 
 const App = () => {
   return (
@@ -26,6 +27,8 @@ const App = () => {
       
       <AuthRoute path='/login' component={LoginFormContainer} />
       <AuthRoute path='/signup' component={SignupFormContainer} />
+      <Route path='/photos' component={PhotoIndexContainer} />
+      
       <Route path='/' component={SplashContainer} />
     </Switch>
     
