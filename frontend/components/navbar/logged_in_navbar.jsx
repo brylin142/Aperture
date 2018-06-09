@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 class LoggedInNavbar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -16,7 +16,7 @@ class LoggedInNavbar extends React.Component {
             &nbsp;
           <button onClick={this.props.logout} className="logout-button">Logout</button>
         </div>
-    )
+    );
   }
 }
 

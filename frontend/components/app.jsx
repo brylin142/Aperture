@@ -13,6 +13,8 @@ import {
   HashRouter
 } from 'react-router-dom';
 import PhotoIndexContainer from './photos/photo_index_container';
+import PhotoShowContainer from './photos/photo_show_container';
+
 
 const App = () => {
   return (
@@ -27,8 +29,8 @@ const App = () => {
       
       <AuthRoute path='/login' component={LoginFormContainer} />
       <AuthRoute path='/signup' component={SignupFormContainer} />
+      <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route path='/photos' component={PhotoIndexContainer} />
-      
       <Route path='/' component={SplashContainer} />
     </Switch>
     

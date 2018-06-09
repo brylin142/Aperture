@@ -3,14 +3,14 @@ export const fetchPhotos = () => (
     method: 'GET',
     url: 'api/photos'
   })
-)
+);
 
 export const fetchPhoto = id => (
   $.ajax({
     method: 'GET',
     url: `api/photos/${id}`
   })
-)
+);
 
 export const createPhoto  = photo => (
   $.ajax({
@@ -18,7 +18,7 @@ export const createPhoto  = photo => (
     url: `api/photos`,
     data: { photo }
   })
-)
+);
 
 export const updatePhoto = photo => (
   $.ajax({
@@ -26,11 +26,11 @@ export const updatePhoto = photo => (
     url: `api/photos/${photo.id}`,
     data: { photo }
   })
-)
+);
 
 export const deletePhoto = id => (
   $.ajax({
     method: 'DELETE',
     url: `api/photos/${id}`
   })
-)
+);

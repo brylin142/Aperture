@@ -28,14 +28,14 @@ export const deletePhoto = id => dispatch => (
 const receiveAllPhotos = photos => ({
   type: RECEIVE_ALL_PHOTOS,
   photos
-})
+});
 
 const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
   photo
-})
+});
 
 const removePhoto = photo => ({
   type: REMOVE_PHOTO,
   id: photo.id
-})
+});
