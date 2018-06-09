@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom';
 import PhotoIndexContainer from './photos/photo_index_container';
 import PhotoShowContainer from './photos/photo_show_container';
+import EditPhotoFormContainer from './photos/edit_photo_form_container';
 
 
 const App = () => {
@@ -29,10 +30,15 @@ const App = () => {
       
       <AuthRoute path='/login' component={LoginFormContainer} />
       <AuthRoute path='/signup' component={SignupFormContainer} />
+      <Route exact path='/' component={SplashContainer} />
+    </Switch>
+
+    <Switch>
+      <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route path='/photos' component={PhotoIndexContainer} />
-      <Route path='/' component={SplashContainer} />
     </Switch>
+
     
   </div>
   );

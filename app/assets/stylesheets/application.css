@@ -261,3 +261,35 @@
   border-radius: 3px;
   /* background: white; */
 }
+
+/* ---- Photos ---- */
+
+.photos-index-container {
+  justify-content: center;
+}
+
+.photos-index {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+}
+
+.photo-show {
+  padding-top: 20px;
+}
+
+.photo-show-profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.photo-show-title {
+  font-weight: bolder;
+  font-style: italic;
+}

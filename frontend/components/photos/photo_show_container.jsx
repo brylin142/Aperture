@@ -4,7 +4,8 @@ import { fetchPhoto, deletePhoto } from '../../actions/photo_actions';
 
 const msp = (state, ownProps) => {
   return {
-    photo: state.entities.photos[ownProps.match.params.photoId]
+    photo: state.entities.photos[ownProps.match.params.photoId],
+    user: state.entities.users
   };
 };
 

@@ -7,15 +7,14 @@ class PhotoIndex extends React.Component {
   }
 
   render () {
-    let colLength = this.props.photos.length / 4;
     let photos = this.props.photos.map((photo, idx) =>
-    <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url}/></Link>
+    <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url} className="grid-item"/></Link>
     );
 
     return (
-      <div className="photos-index">
+      <div className="photos-index-container">
         <h1>Photos</h1>
-        <div className="row">{photos}</div>
+        <div className="photos-index">{photos}</div>
       </div>
     );
   }
