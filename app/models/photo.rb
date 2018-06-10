@@ -15,4 +15,5 @@ class Photo < ApplicationRecord
   validates :title, :user_id, :img_url, presence: true
 
   belongs_to :user
+  has_many :comments
 end

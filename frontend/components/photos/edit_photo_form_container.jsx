@@ -8,11 +8,7 @@ class EditPhotoForm extends React.Component {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.photo.id !== nextProps.match.params.photoId) {
-      this.props.fetchPhoto(nextProps.match.params.photoId);
-    }
-  }
+
 
   render() {
     return (
@@ -20,7 +16,7 @@ class EditPhotoForm extends React.Component {
         action = {this.props.action}
         formType = {this.props.formType}
         photo = {this.props.photo} />
-    )
+    );
   }
 }
 
@@ -37,4 +33,4 @@ const mdp = dispatch => ({
   action: photo => dispatch(updatePhoto(photo))
 });
 
-export default connect(msp, mdp)(EditPhotoForm)
+export default connect(msp, mdp)(EditPhotoForm);

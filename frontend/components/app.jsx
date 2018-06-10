@@ -34,7 +34,7 @@ const App = () => {
     </Switch>
 
     <Switch>
-      <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
+      <Route path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route path='/photos' component={PhotoIndexContainer} />
     </Switch>

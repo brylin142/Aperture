@@ -55,15 +55,10 @@
   z-index: -10;
 }
 
-.vsc-initialized {
-  z-index: -5;
-}
-
 .app {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
-  z-index: -1;
+  align-items: center; */
 }
 
 .splash {
@@ -99,12 +94,12 @@
   padding-bottom: 14px;
   padding-right: 36px;
   padding-left: 36px;
-  transition: .5s;
   z-index: 4;
 }
 
 .splash-signup:hover {
   color: grey;
+  transition: .5s;
 }
 
 .logout-button {
@@ -182,11 +177,11 @@
   padding-bottom: 7px;
   padding-right: 18px;
   padding-left: 18px;
-  transition: .5s;
 }
 
 .signup:hover {
   color: grey;
+  transition: .5s;
 }
 
 .login-link {
@@ -194,6 +189,11 @@
   font-weight: 900;
   color: white;
   text-decoration: none;
+}
+
+.login-link:hover {
+  color: rgb(190, 190, 190);
+  transition: .5s;
 }
 
 .auth-wrapper {
@@ -210,7 +210,6 @@
   vertical-align: center;
   position: fixed;
   top: 0;
-  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,7 +220,6 @@
   border: 1px solid black;
   background: rgba(48, 48, 48, 0.247);
   border-radius: 3px;
-  text-align: center;
   width: 300px;
   display: flex;
   justify-content: center;
@@ -241,6 +239,11 @@
   padding-left: 18px;
 }
 
+.session-submit:hover {
+  color: grey;
+  transition: .5s;
+}
+
 .demo-login {
   font-weight: 500;
   font-size: 16px;
@@ -251,6 +254,11 @@
   padding-bottom: 7px;
   padding-right: 18px;
   padding-left: 18px;
+}
+
+.demo-login:hover {
+  color: grey;
+  transition: .5s;
 }
 
 .login-input {
@@ -265,7 +273,9 @@
 /* ---- Photos ---- */
 
 .photos-index-container {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .photos-index {
@@ -279,11 +289,22 @@
   padding: 10px;
 }
 
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+
 .photo-show {
   padding-top: 20px;
 }
 
 .photo-show-profile {
+  margin-bottom: 0px;
+}
+
+.photo-show-profile-pic {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -292,4 +313,101 @@
 .photo-show-title {
   font-weight: bolder;
   font-style: italic;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
+
+.photo-show-description {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.photo-show-index-link {
+  color: black;
+}
+
+.photo-show-index-link:hover {
+  color: grey;
+  transition: .5s;
+}
+
+.change-photo-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.edit-photo {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+  text-decoration: none;
+}
+
+.edit-photo:hover {
+  color: grey;
+  transition: .5s;
+}
+
+.delete-photo {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.delete-photo:hover {
+  color: grey;
+  transition: .5s;
+}
+
+.change-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.change-form {
+  justify-content: center;
+}
+
+.change-form-container-input {
+  width: 300px;
+  padding: 5px 5px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.change-form-submit {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+
+.change-form-submit:hover {
+  color: grey;
+  transition: .5s;
+}
+

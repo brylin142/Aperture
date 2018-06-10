@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './navbar';
-import { logout } from '../../actions/session_actions'
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.entities.users[state.session.id]
