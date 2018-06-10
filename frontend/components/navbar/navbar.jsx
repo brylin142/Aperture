@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     if (!this.props.currentUser) {
       greeting = () => (
        <header className="navbar-header">
-       {title}
+       <Link to='/'><h1 className="title">Aperture</h1></Link>
         <div className="navbar-login">
             <Link to='/login' className="login-link">Log In</Link>
             &nbsp;
@@ -26,7 +26,7 @@ class Navbar extends React.Component {
     } else {
       greeting = () => (
       <header className="navbar-header login">
-        {title}
+        <Link to='/photos'><h1 className="title">Aperture</h1></Link>
         <LoggedInNavbarContainer />
       </header>
       )

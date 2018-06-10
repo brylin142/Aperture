@@ -127,7 +127,11 @@ class SessionForm extends React.Component {
         <button onClick={this.handleSubmit} className="session-submit" type="submit">{this.props.formType}</button>
         <br/>
         <br/>
-        <button onClick={() => this.props.login({username: "photolover", password: "qwer0987"})} className="demo-login">Demo Login</button>
+        <button 
+          onClick={() => this.props.login({username: "photolover", password: "qwer0987"})
+            .then( () => this.props.history.push('/photos'))} className="demo-login">
+          Demo Login
+        </button>
         <br/>
         <br/>
 
