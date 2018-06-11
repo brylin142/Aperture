@@ -52,6 +52,7 @@
  body, html {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background: #F3F5F6;
   z-index: -10;
 }
 
@@ -119,7 +120,7 @@
 .title {
   font-weight: bolder;
   color: white;
-  padding-left: 10px;
+  padding-left: 30px;
   margin: 0;
 }
 
@@ -142,7 +143,7 @@
   justify-content: space-between;
   align-items: baseline;
   color: white;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 
 .login {
@@ -276,6 +277,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #F3F5F6;
 }
 
 .photos-index {
@@ -284,9 +286,19 @@
 }
 
 .grid-item {
+  /* height: 80%;
+  width: 80%;
+  padding: 10%; */
   height: 300px;
   width: 300px;
   padding: 10px;
+}
+
+.photo-show-wrapper {
+  background: #F3F5F6;
+  width: 100vw;
+  /* margin-top: 10px; */
+  justify-content: space-around;
 }
 
 .photo-container {
@@ -294,10 +306,16 @@
   flex-direction: column;
   align-items: center;
   margin: 0px;
+  background: #212124;
+}
+
+.photo-show-container {
+  width: 80%;
+  margin-left: 20%;
 }
 
 .photo-show {
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .photo-show-profile {
@@ -339,17 +357,9 @@
 }
 
 .edit-photo {
-  font-weight: 500;
-  font-size: 16px;
-  background: white;
-  color: black;
-  border: 1px solid black;
-  border-radius: 3px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 18px;
-  padding-left: 18px;
-  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  padding: 15px;
 }
 
 .edit-photo:hover {
@@ -358,20 +368,13 @@
 }
 
 .delete-photo {
-  font-weight: 500;
-  font-size: 16px;
-  background: white;
-  color: black;
-  border-radius: 3px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 18px;
-  padding-left: 18px;
+  height: 30px;
+  width: 30px;
+  padding: 15px;
 }
 
 .delete-photo:hover {
-  color: grey;
-  transition: .5s;
+  cursor: pointer;
 }
 
 .change-form-container {

@@ -4,6 +4,7 @@ export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const fetchPhotos = () => dispatch => (
   PhotoApiUtil.fetchPhotos()
@@ -11,15 +12,15 @@ export const fetchPhotos = () => dispatch => (
 );
 
 export const fetchPhoto = id => dispatch => (
-  PhotoApiUtil.fetchPhoto(id).then(photo => dispatch(receivePhoto(photo)))
+  PhotoApiUtil.fetchPhoto(id).then(payload => dispatch(receivePhoto(payload)))
 );
 
 export const createPhoto = photo => dispatch => (
-  PhotoApiUtil.createPhoto(photo).then(photoFromServer => dispatch(receivePhoto(photoFromServer)))
+  PhotoApiUtil.createPhoto(photo).then(payload => dispatch(receivePhoto(payload)))
 );
 
 export const updatePhoto = photo => dispatch => (
-  PhotoApiUtil.updatePhoto(photo).then(photoFromServer => dispatch(receivePhoto(photoFromServer)))
+  PhotoApiUtil.updatePhoto(photo).then(payload => dispatch(receivePhoto(payload)))
 );
 
 export const deletePhoto = id => dispatch => (
@@ -27,7 +28,11 @@ export const deletePhoto = id => dispatch => (
 );
 
 export const createComment = comment => dispatch => (
-  PhotoApiUtil.createComment(comment).then(commentFromServer => dispatch(receiveComment(commentFromServer)))
+  PhotoApiUtil.createComment(comment).then(payload => dispatch(receiveComment(payload)))
+);
+
+export const deleteComment = id => dispatch => (
+  PhotoApiUtil.deleteComment(id).then(comment => dispatch(removeComment(comment)))
 );
 
 const receiveAllPhotos = photos => ({
@@ -35,9 +40,9 @@ const receiveAllPhotos = photos => ({
   photos
 });
 
-const receivePhoto = photo => ({
+const receivePhoto = payload => ({
   type: RECEIVE_PHOTO,
-  photo
+  payload
 });
 
 const removePhoto = photo => ({
@@ -45,7 +50,12 @@ const removePhoto = photo => ({
   id: photo.id
 });
 
-const receiveComment = comment => ({
+const receiveComment = payload => ({
   type: RECEIVE_COMMENT,
-  comment
+  payload
+});
+
+const removeComment = comment => ({
+  type: REMOVE_COMMENT,
+  id: comment.id
 });
