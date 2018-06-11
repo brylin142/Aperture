@@ -34,3 +34,11 @@ export const deletePhoto = id => (
     url: `api/photos/${id}`
   })
 );
+
+export const createComment = comment => (
+  $.ajax({
+    method: 'POST',
+    url: `api/photos/${comment.photo_id}/comments`,
+    data: { comment }
+  })
+);

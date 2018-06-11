@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
       img_url: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,6 +30,12 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then( () => this.props.history.push('/photos'));
+  }
+  
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    this.props.login({ username: "photolover", password: "qwer0987" })
+      .then( () => this.props.history.push('/photos'));
   }
 
   renderErrors() {
@@ -128,8 +135,7 @@ class SessionForm extends React.Component {
         <br/>
         <br/>
         <button 
-          onClick={() => this.props.login({username: "photolover", password: "qwer0987"})
-            .then( () => this.props.history.push('/photos'))} className="demo-login">
+          onClick={this.handleDemoSubmit} className="demo-login">
           Demo Login
         </button>
         <br/>

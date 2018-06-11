@@ -3,6 +3,7 @@ import * as PhotoApiUtil from '../util/photo_api_util';
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
+export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 
 export const fetchPhotos = () => dispatch => (
   PhotoApiUtil.fetchPhotos()
@@ -25,6 +26,10 @@ export const deletePhoto = id => dispatch => (
   PhotoApiUtil.deletePhoto(id).then(photo => dispatch(removePhoto(photo)))
 );
 
+export const createComment = comment => dispatch => (
+  PhotoApiUtil.createComment(comment).then(commentFromServer => dispatch(receiveComment(commentFromServer)))
+);
+
 const receiveAllPhotos = photos => ({
   type: RECEIVE_ALL_PHOTOS,
   photos
@@ -38,4 +43,9 @@ const receivePhoto = photo => ({
 const removePhoto = photo => ({
   type: REMOVE_PHOTO,
   id: photo.id
+});
+
+const receiveComment = comment => ({
+  type: RECEIVE_COMMENT,
+  comment
 });

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO } from '../actions/photo_actions';
+import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_COMMENT } from '../actions/photo_actions';
 
 const photosReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,6 +11,10 @@ const photosReducer = (state = {}, action) => {
     case REMOVE_PHOTO:
       let newState = merge({}, state);
       delete newState[action.id];
+      return newState;
+    case RECEIVE_COMMENT:
+      newState = merge({}, state);
+      newState[action.comment.photo_id].commentIds.push(action.comment.id);
       return newState;
     default:
       return state;
