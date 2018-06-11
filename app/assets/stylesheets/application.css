@@ -312,6 +312,7 @@
 .photo-show-container {
   width: 80%;
   margin-left: 20%;
+  margin-bottom: 20px;
 }
 
 .photo-show {
@@ -323,8 +324,8 @@
 }
 
 .photo-show-profile-pic {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
@@ -414,3 +415,41 @@
   transition: .5s;
 }
 
+/* ---- Comments ---- */
+
+.comments {
+  background: #F3F5F6;
+  width: 100vw;
+}
+
+.comment-container {
+  width: 40vw;
+  display: flex;
+  margin-left: 20%
+}
+
+.comment-container.hover {
+  background: white;
+}
+
+.comment-user {
+  font-weight: 900;
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 2px;
+  /* font-style: italic; */
+  /* color: #286CA7; */
+}
+
+.comment-body {
+  list-style-type: none;
+  padding: 2px;
+}
+
+.comment-profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

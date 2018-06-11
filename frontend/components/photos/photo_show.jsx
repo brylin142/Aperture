@@ -6,18 +6,12 @@ class PhotoShow extends React.Component {
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.photo.id !== nextProps.match.params.photoId) {
-  //     this.props.fetchPhoto(nextProps.match.params.photoId);
-  //   }
-  // }
-
+  
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       this.props.photo && this.props.user ?
-        <div className="photo-container">
+      <div className="photo-container">
           <img src={this.props.photo.img_url} className="photo-show"/>
           <div className="change-photo-container">
             <Link to={`/photos/${this.props.photo.id}/edit`}>
@@ -26,7 +20,7 @@ class PhotoShow extends React.Component {
             <img src="https://www.iconsdb.com/icons/preview/white/delete-xxl.png"
             onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
               .then(() => this.props.history.push('/photos'))}
-            className="delete-photo" />
+              className="delete-photo" />
           </div>
           <div className="photo-show-wrapper">
             <div className="photo-show-container">
@@ -45,11 +39,17 @@ class PhotoShow extends React.Component {
             </div>
           </div>
           <ul className="comments">
-            {this.props.comments.map(comment =>
-              <li>{comment.body}</li>
+            {this.props.comments.map(comment => 
+              <div className="comment-container">
+                <img src={this.props.user.img_url} className="comment-profile-pic" />
+                <ul>
+                  <li className="comment-user">{comment.user_id}</li>
+                  <li className="comment-body">{comment.body}</li>
+                </ul>
+              </div>
             )}
           </ul>
-          {/* <CommentForm /> */}
+          <CommentForm />
         </div>
       : null
     );

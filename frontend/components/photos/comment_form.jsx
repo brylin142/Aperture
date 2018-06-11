@@ -15,11 +15,13 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = merge({}, this.state, { photo_id: this.props.match.params.photoId });
+    debugger;
     this.props.createComment(comment);
     this.props.history.push(`/photos/${this.props.match.params.photoId}`);
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="comment-form">
         <form onSubmit={this.handleSubmit}>
@@ -29,7 +31,7 @@ class CommentForm extends React.Component {
           <textarea
             cols="30"
             rows="10"
-            value={this.state.body}
+            value={this.props.body}
             onChange={this.updateBody}
           />
           <br />

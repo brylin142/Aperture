@@ -1,9 +1,9 @@
-export const getFilteredCommemnts = (commentsState, photo_id) => {
+export const getFilteredCommemnts = (commentsState, photoId) => {
   let result = [];
 
   const comments = Object.values(commentsState);
   comments.forEach(comment => {
-    if (comment.photo_id === photo_id) {
+    if (comment.photo_id === photoId) {
       result.push(comment);
     }
   });
