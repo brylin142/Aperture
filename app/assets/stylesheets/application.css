@@ -297,9 +297,9 @@
 .photo-show-divider {
   background: #F3F5F6;
   width: 100vw;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
 }
 
 .tag-container {
@@ -355,12 +355,9 @@
 }
 
 .photo-show-index-link {
-  color: black;
-}
-
-.photo-show-index-link:hover {
-  color: grey;
-  transition: .5s;
+  height: 30px;
+  width: 30px;
+  padding: 15px;
 }
 
 .change-photo-container {
@@ -374,11 +371,6 @@
   height: 30px;
   width: 30px;
   padding: 15px;
-}
-
-.edit-photo:hover {
-  color: grey;
-  transition: .5s;
 }
 
 .delete-photo {
@@ -434,6 +426,10 @@
   background: #F3F5F6;
   width: 100vw;
   margin-left: 15%
+}
+
+.comments > p {
+  font-weight: 900;
 }
 
 .comment-container {

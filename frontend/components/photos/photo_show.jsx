@@ -14,7 +14,11 @@ class PhotoShow extends React.Component {
       this.props.photo && this.props.user ?
         <div className="photo-container">
           <img src={this.props.photo.img_url} className="photo-show"/>
+          
           <div className="change-photo-container">
+            <Link to={'/photos'}>
+              <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link"/>
+            </Link>
             <Link to={`/photos/${this.props.photo.id}/edit`}>
               <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" className="edit-photo"/>
             </Link>
@@ -23,40 +27,46 @@ class PhotoShow extends React.Component {
               .then(() => this.props.history.push('/photos'))}
               className="delete-photo" />
           </div>
-        <div className="photo-show-container">
-          <div className="photo-show-divider">
-            <div className="photo-show-wrapper">
-              <h3 className="photo-show-profile">
-                <img src={this.props.user.img_url} className="photo-show-profile-pic"/>
-                <p>{this.props.user.first_name}</p>
-              </h3>
-              <br/>
-              <p className="photo-show-title">{this.props.photo.title}</p>
-              <br/>
-              <p className="photo-show-description">{this.props.photo.description}</p>
-              <br/>
-              <Link to='/photos' className="photo-show-index-link">Photo Index</Link>
-              <br/> <br/>
+
+          <div className="photo-show-container">
+            
+            <div className="photo-show-divider">
+
+              <div className="photo-show-wrapper">
+                <h3 className="photo-show-profile">
+                  <img src={this.props.user.img_url} className="photo-show-profile-pic"/>
+                  <p>{this.props.user.first_name}</p>
+                </h3>
+                <br/>
+                <p className="photo-show-title">{this.props.photo.title}</p>
+                <br/>
+                <p className="photo-show-description">{this.props.photo.description}</p>
+                <br/>
+                <br/> <br/>
+              </div>
+              
+              <div className="tag-container">
+                <TagFormContainer />
+              </div>
+
+            </div>
+              <ul className="comments">
+              <p>Comments</p>
+                {this.props.comments.map((comment, idx) => 
+                  <div className="comment-container">
+                    <img src={this.props.user.img_url} key={comment.id} className="comment-profile-pic" />
+                    <ul>
+                      <li className="comment-user" key={idx + 1}>{comment.user_id}</li>
+                      <li className="comment-body" key={idx}>{comment.body}</li>
+                      
+                      
+                    </ul>
+                  </div>
+                  )}
+              </ul>
+              <CommentFormContainer />
             </div>
           </div>
-          <div className="tag-container">
-
-            <TagFormContainer />
-          </div>
-          <ul className="comments">
-            {this.props.comments.map(comment => 
-              <div className="comment-container">
-                <img src={this.props.user.img_url} className="comment-profile-pic" />
-                <ul>
-                  <li className="comment-user">{comment.user_id}</li>
-                  <li className="comment-body">{comment.body}</li>
-                </ul>
-              </div>
-            )}
-          </ul>
-          <CommentFormContainer />
-          </div>
-        </div>
       : null
     );
   }
