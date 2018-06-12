@@ -5,6 +5,8 @@ export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const RECEIVE_TAG = 'RECEIVE_TAG';
+export const REMOVE_TAG = 'REMOVE_TAG';
 
 export const fetchPhotos = () => dispatch => (
   PhotoApiUtil.fetchPhotos()
@@ -35,6 +37,14 @@ export const deleteComment = id => dispatch => (
   PhotoApiUtil.deleteComment(id).then(comment => dispatch(removeComment(comment)))
 );
 
+export const createTag = tag => dispatch => (
+  PhotoApiUtil.createTag(tag).then(payload => dispatch(receiveTag(payload)))
+);
+
+export const deleteTag = id => dispatch => (
+  PhotoApiUtil.deleteTag(id).then(tag => dispatch(removeTag(tag)))
+);
+
 const receiveAllPhotos = photos => ({
   type: RECEIVE_ALL_PHOTOS,
   photos
@@ -58,4 +68,14 @@ const receiveComment = payload => ({
 const removeComment = comment => ({
   type: REMOVE_COMMENT,
   id: comment.id
+});
+
+const receiveTag = payload => ({
+  type: RECEIVE_TAG,
+  payload
+});
+
+const removeTag = tag => ({
+  type: REMOVE_TAG,
+  id: tag.id
 });

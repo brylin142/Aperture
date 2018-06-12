@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :photos, only: [:create, :show, :index, :update, :destroy] do
       resources :comments, only: [:create]
+      resources :tags, only: [:create]
     end
     resources :comments, only: [:destroy]
+    resources :tags, only: [:destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

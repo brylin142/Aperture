@@ -49,3 +49,18 @@ export const deleteComment = id => (
     url: `api/comments/${id}`
   })
 );
+
+export const createTag = tag => (
+  $.ajax({
+    method: 'POST',
+    url: `api/photos/${tag.photo_id}/tags`,
+    data: { tag }
+  })
+);
+
+export const deleteTag = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/tags/${id}`
+  })
+);

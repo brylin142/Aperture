@@ -21,6 +21,7 @@ class PhotoForm extends React.Component {
 
   render() {
     return (
+      // this.state ?
       <div className="change-form-container">
         <h3>{this.props.formType}</h3>
         <br/>
@@ -61,6 +62,7 @@ class PhotoForm extends React.Component {
           <input type="submit" value={this.props.formType} className="change-form-submit"/>
         </form>
       </div>
+      // : null
     );
   }
 }

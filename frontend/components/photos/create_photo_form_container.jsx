@@ -4,7 +4,7 @@ import PhotoForm from './photo_form';
 import { createPhoto } from '../../actions/photo_actions';
 
 const msp = state => {
-  const photo = { title: '', description: '', user_id: {state.session.id}, img_url: '' };
+  const photo = { title: '', description: '', user_id: state.session.id, img_url: '' };
   const formType = 'Create Photo';
 
   return { photo, formType };

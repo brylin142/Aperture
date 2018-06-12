@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotoForm from './photo_form';
 
 class PhotoIndex extends React.Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class PhotoIndex extends React.Component {
       <div className="photos-index-container">
         <h1>Photos</h1>
         <div className="photos-index">{photos}</div>
+        <PhotoForm />
       </div>
     );
   }

@@ -11,7 +11,9 @@ import {
   updatePhoto, 
   deletePhoto, 
   createComment,
-  deleteComment
+  deleteComment,
+  createTag,
+  deleteTag
 } from './actions/photo_actions';
   
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.deletePhoto = deletePhoto;
   window.createComment = createComment;
   window.deleteComment = deleteComment;
+  window.createTag = createTag;
+  window.deleteTag = deleteTag;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

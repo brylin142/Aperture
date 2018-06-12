@@ -14,3 +14,10 @@ json.comments do
     end
   end
 end
+json.tags do
+  @photo.tags.each do |tag|
+    json.set! tag.id do
+      json.extract! tag, :id, :label, :photo_id
+    end
+  end
+end
