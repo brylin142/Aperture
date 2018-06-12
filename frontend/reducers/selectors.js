@@ -9,3 +9,15 @@ export const getFilteredCommemnts = (commentsState, photoId) => {
   });
   return result;
 };
+
+export const getFilteredTags = (tagsState, photoId) => {
+  let result = [];
+
+  const tags = Object.values(tagsState);
+  tags.forEach(tag => {
+    if (tag.photo_id === photoId) {
+      result.push(tag);
+    }
+  });
+  return result;
+};

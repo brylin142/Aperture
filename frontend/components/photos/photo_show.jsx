@@ -9,7 +9,7 @@ class PhotoShow extends React.Component {
   }
   
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     return (
       this.props.photo && this.props.user ?
         <div className="photo-container">
@@ -35,35 +35,53 @@ class PhotoShow extends React.Component {
               <div className="photo-show-wrapper">
                 <h3 className="photo-show-profile">
                   <img src={this.props.user.img_url} className="photo-show-profile-pic"/>
-                  <p>{this.props.user.first_name}</p>
+                  
+                  <div>
+                    <p className="photo-show-user">{this.props.user.username}</p>
+                    <p className="photo-show-title">{this.props.photo.title}</p>
+                  </div>
+
                 </h3>
                 <br/>
-                <p className="photo-show-title">{this.props.photo.title}</p>
                 <br/>
                 <p className="photo-show-description">{this.props.photo.description}</p>
                 <br/>
                 <br/> <br/>
               </div>
               
-              <div className="tag-container">
+              <div className="tag-wrapper">
+                <strong>Tags</strong>
+                <div className="tag-container">
+                  {this.props.tags.map(tag =>
+                    <p key={tag.id} className="tag">{tag.label}</p>
+                  )}
+                </div>
                 <TagFormContainer />
               </div>
 
             </div>
-              <ul className="comments">
+
+              <div className="comments">
               <p>Comments</p>
                 {this.props.comments.map((comment, idx) => 
+                  
                   <div className="comment-container">
                     <img src={comment.user.img_url} key={comment.id} className="comment-profile-pic" />
                     <ul>
-                      <li className="comment-user" key={idx + 1}>{comment.user.username}</li>
+                      <div className="comment-remove">
+                        <li className="comment-user" key={idx + 1}>{comment.user.username}</li>
+                        <button 
+                        onClick={() => this.props.deleteComment(comment.id).then(() => this.props.history.push(`/photos/${this.props.match.params.photoId}`))} 
+                          className="comment-delete">
+                          Delete
+                        </button>
+                      </div>
                       <li className="comment-body" key={idx}>{comment.body}</li>
-                      
-                      
                     </ul>
                   </div>
                   )}
-              </ul>
+              </div>
+
               <CommentFormContainer />
             </div>
           </div>

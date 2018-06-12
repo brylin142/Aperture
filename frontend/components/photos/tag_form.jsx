@@ -9,7 +9,7 @@ class TagForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateBody() {
+  updateLabel() {
     return e => this.setState({ label: e.currentTarget.value });
   }
 
@@ -25,11 +25,10 @@ class TagForm extends React.Component {
     return (
       <div className="tag-form">
         <form onSubmit={this.handleSubmit}>
-          <label>Tag</label>
           <br />
-          <input type="text" value={this.props.body} onChange={this.updateBody}/>
-          <br />
-          <input type="submit" />
+          <input type="text" value={this.state.label} onChange={this.updateLabel()} placeholder="Add a tag" className="tag-submit"/>
+          {/* <br />
+          <input type="submit" value="Add tag" /> */}
         </form>
       </div>
     );

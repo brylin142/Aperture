@@ -307,15 +307,37 @@ input[type=text] {
   justify-content: space-between;
 }
 
+.tag-wrapper {
+  padding-top: 20px;
+  margin-right: 20%;
+}
+
 .tag-container {
-  margin-right: 20%
+  display: flex;
+  width: 200px;
+  overflow-wrap: break-word;
+}
+
+.tag {
+  background: #D0D6D9;
+  border-radius: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 8px;
+  padding-left: 8px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.tag-submit {
+  border: 1px solid #439AE3;
+  outline: none;
 }
 
 .photo-show-wrapper {
   /* width: 100vw; */
   /* margin-top: 10px; */
   margin-left: 20%;
-  margin-bottom: 20px;
 } 
 
 .photo-container {
@@ -341,15 +363,27 @@ input[type=text] {
   align-items: center;
 }
 
+.photo-show-profile > div {
+  margin-left: 10px;
+}
+
 .photo-show-profile-pic {
   height: 60px;
   width: 60px;
   border-radius: 50%;
 }
 
+.photo-show-user {
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
 .photo-show-title {
   font-weight: bolder;
   font-style: italic;
+  font-size: 16px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -430,20 +464,39 @@ input[type=text] {
 .comments {
   background: #F3F5F6;
   width: 100vw;
-  margin-left: 15%
+  margin-left: 20%;
 }
 
 .comments > p {
   font-weight: 900;
+  width: 100vw;
+  margin-right: 0px;
+  margin-bottom: 0;
 }
 
 .comment-container {
   width: 40vw;
   display: flex;
+  align-items: center;
+  z-index: 10;
 }
 
-.comment-container.hover {
+.comment-container:hover {
   background: white;
+}
+
+.comment-container:hover .comment-delete{
+  display: block;
+}
+
+.comment-container > ul {
+  padding-left: 10px;
+} 
+
+.comment-remove {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .comment-user {
@@ -453,6 +506,19 @@ input[type=text] {
   padding: 2px;
   /* font-style: italic; */
   /* color: #286CA7; */
+}
+
+.comment-delete {
+  background: #D0D6D9;
+  border-radius: 3px;
+  height: 20px;
+  /* padding-top: 3px;
+  padding-bottom: 3px; */
+  /* padding-right: 8px;
+  padding-left: 8px; */
+  /* font-weight: 500; */
+  outline: none;
+  display: none;
 }
 
 .comment-body {
