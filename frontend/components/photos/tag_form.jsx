@@ -5,18 +5,20 @@ import merge from 'lodash/merge';
 class TagForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { label: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updateBody() {
-    return e => this.setState({ body: e.currentTarget.value });
+    return e => this.setState({ label: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const tag = merge({}, this.state, { photo_id: this.props.match.params.photoId });
-    this.props.createTag(tag);
-    // this.props.history.push(`/photos/${this.props.match.params.photoId}`);
+    const photoId = parseInt(this.props.match.params.photoId);
+    const tag = merge({}, this.state, { label: this.state.label, photo_id: photoId });
+    console.log(tag)
+    this.props.createTag(tag).then(this.setState({ label: '' }));
   }
 
   render() {

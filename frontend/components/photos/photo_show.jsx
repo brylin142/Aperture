@@ -54,9 +54,9 @@ class PhotoShow extends React.Component {
               <p>Comments</p>
                 {this.props.comments.map((comment, idx) => 
                   <div className="comment-container">
-                    <img src={this.props.user.img_url} key={comment.id} className="comment-profile-pic" />
+                    <img src={comment.user.img_url} key={comment.id} className="comment-profile-pic" />
                     <ul>
-                      <li className="comment-user" key={idx + 1}>{comment.user_id}</li>
+                      <li className="comment-user" key={idx + 1}>{comment.user.username}</li>
                       <li className="comment-body" key={idx}>{comment.body}</li>
                       
                       

@@ -41,6 +41,11 @@
    height: auto;
  }
  */
+
+textarea,
+input[type=text] {
+  font-family: 'Montserrat', sans-serif;
+}
  
  button,
  input[type="submit"] {
