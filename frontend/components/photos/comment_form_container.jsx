@@ -3,12 +3,13 @@ import { createComment, deleteComment } from '../../actions/photo_actions';
 import CommentForm from './comment_form';
 
 const msp = state => ({
-  user: state.entities.users[state.entities.comments.user_id]
+  user: state.entities.users[state.session.id],
+  comment: { body: '' }
 });
 
 const mdp = dispatch => ({
   createComment: comment => dispatch(createComment(comment)),
-  deleteComment: comment => dispatch(deleteComment(comment))
+  deleteComment: id => dispatch(deleteComment(id))
 });
 
 export default connect(msp, mdp)(CommentForm);

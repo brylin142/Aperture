@@ -14,28 +14,32 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = merge({}, this.state, { photo_id: this.props.match.params.photoId });
-    debugger;
+    console.log(this.state)
+    const photoId = parseInt(this.props.match.params.photoId);
+    const comment = merge({}, this.state, { body: this.props.comment.body, photo_id: photoId, user_id: this.props.user.id });
+    console.log(comment)
     this.props.createComment(comment);
-    this.props.history.push(`/photos/${this.props.match.params.photoId}`);
+    // this.props.history.push(`/photos/${this.props.match.params.photoId}`);
   }
 
   render() {
-    console.log(this.props);
     return (
-      <div className="comment-form">
-        <form onSubmit={this.handleSubmit}>
-          <label>Comment</label>
+      <div className="comment-form-container">
+        <form onSubmit={this.handleSubmit} className="comment-form">
+          {/* <img src={this.state.entities.users[this.state.session.id].img_url}/> */}
+          {/* <label>Add a comment</label> */}
           <br />
 
           <textarea
             cols="30"
-            rows="10"
+            rows="5"
             value={this.props.body}
             onChange={this.updateBody}
+            placeholder="Add a comment"
+            className="comment-field"
           />
           <br />
-          <input type="submit" />
+          <input type="submit" value="Comment" className="comment-submit"/>
         </form>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommentForm from './comment_form';
+import CommentFormContainer from './comment_form_container';
+import TagFormContainer from './tag_form_container';
 
 class PhotoShow extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class PhotoShow extends React.Component {
     // console.log(this.props);
     return (
       this.props.photo && this.props.user ?
-      <div className="photo-container">
+        <div className="photo-container">
           <img src={this.props.photo.img_url} className="photo-show"/>
           <div className="change-photo-container">
             <Link to={`/photos/${this.props.photo.id}/edit`}>
@@ -22,8 +23,9 @@ class PhotoShow extends React.Component {
               .then(() => this.props.history.push('/photos'))}
               className="delete-photo" />
           </div>
-          <div className="photo-show-wrapper">
-            <div className="photo-show-container">
+        <div className="photo-show-container">
+          <div className="photo-show-divider">
+            <div className="photo-show-wrapper">
               <h3 className="photo-show-profile">
                 <img src={this.props.user.img_url} className="photo-show-profile-pic"/>
                 {this.props.user.first_name}
@@ -38,6 +40,10 @@ class PhotoShow extends React.Component {
               <br/>
             </div>
           </div>
+          <div className="tag-container">
+
+            <TagFormContainer />
+          </div>
           <ul className="comments">
             {this.props.comments.map(comment => 
               <div className="comment-container">
@@ -49,7 +55,8 @@ class PhotoShow extends React.Component {
               </div>
             )}
           </ul>
-          <CommentForm />
+          <CommentFormContainer />
+          </div>
         </div>
       : null
     );
