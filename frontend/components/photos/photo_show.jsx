@@ -28,7 +28,7 @@ class PhotoShow extends React.Component {
             <div className="photo-show-wrapper">
               <h3 className="photo-show-profile">
                 <img src={this.props.user.img_url} className="photo-show-profile-pic"/>
-                {this.props.user.first_name}
+                <p>{this.props.user.first_name}</p>
               </h3>
               <br/>
               <p className="photo-show-title">{this.props.photo.title}</p>
@@ -36,8 +36,7 @@ class PhotoShow extends React.Component {
               <p className="photo-show-description">{this.props.photo.description}</p>
               <br/>
               <Link to='/photos' className="photo-show-index-link">Photo Index</Link>
-              <br/>
-              <br/>
+              <br/> <br/>
             </div>
           </div>
           <div className="tag-container">

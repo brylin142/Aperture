@@ -4,7 +4,6 @@ import CommentForm from './comment_form';
 
 const msp = state => ({
   user: state.entities.users[state.session.id],
-  comment: { body: '' }
 });
 
 const mdp = dispatch => ({

@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { body: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,9 +17,9 @@ class CommentForm extends React.Component {
     e.preventDefault();
     console.log(this.state)
     const photoId = parseInt(this.props.match.params.photoId);
-    const comment = merge({}, this.state, { body: this.props.comment.body, photo_id: photoId, user_id: this.props.user.id });
+    const comment = merge({}, this.state, { body: this.state.body, photo_id: photoId, user_id: this.props.user.id });
     console.log(comment)
-    this.props.createComment(comment);
+    this.props.createComment(comment).then(this.setState({ body: '' }));
     // this.props.history.push(`/photos/${this.props.match.params.photoId}`);
   }
 
@@ -33,8 +34,8 @@ class CommentForm extends React.Component {
           <textarea
             cols="30"
             rows="5"
-            value={this.props.body}
-            onChange={this.updateBody}
+            value={this.state.body}
+            onChange={this.updateBody()}
             placeholder="Add a comment"
             className="comment-field"
           />

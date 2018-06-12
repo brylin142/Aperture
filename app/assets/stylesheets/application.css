@@ -128,7 +128,7 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
   background: rgba(48, 48, 48, 0.247);
@@ -141,7 +141,7 @@
 .navbar-greeting {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   color: white;
   padding-right: 30px;
 }
@@ -332,6 +332,8 @@
 
 .photo-show-profile {
   margin-bottom: 0px;
+  display: flex;
+  align-items: center;
 }
 
 .photo-show-profile-pic {
@@ -478,6 +480,8 @@
 
 .comment-field {
   border: 1px solid #439AE3;
+  outline: none;
+  margin-bottom: 10px;
 }
 
 .comment-submit {
