@@ -15,6 +15,7 @@ import {
 import PhotoIndexContainer from './photos/photo_index_container';
 import PhotoShowContainer from './photos/photo_show_container';
 import EditPhotoFormContainer from './photos/edit_photo_form_container';
+import PhotoForm from './photos/create_photo_form_container';
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
 
     <Switch>
       <Route path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
+      <Route exact path="/photos/new" component={PhotoForm} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route path='/photos' component={PhotoIndexContainer} />
     </Switch>

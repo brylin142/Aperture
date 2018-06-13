@@ -17,7 +17,7 @@ class TagForm extends React.Component {
     e.preventDefault();
     const photoId = parseInt(this.props.match.params.photoId);
     const tag = merge({}, this.state, { label: this.state.label, photo_id: photoId });
-    console.log(tag)
+    console.log(tag);
     this.props.createTag(tag).then(this.setState({ label: '' }));
   }
 

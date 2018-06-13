@@ -4,12 +4,22 @@ import CommentFormContainer from './comment_form_container';
 import TagFormContainer from './tag_form_container';
 
 class PhotoShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { deleted: false }
+    this.deleteComment = this.deleteComment.bind(this);
+  }
+  
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
+
+
+  deleteComment(comment) {
+    this.props.deleteComment(comment.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
+  }
   
   render() {
-    console.log(this.props);
     return (
       this.props.photo && this.props.user ?
         <div className="photo-container">
@@ -69,9 +79,9 @@ class PhotoShow extends React.Component {
                     <img src={comment.user.img_url} key={comment.id} className="comment-profile-pic" />
                     <ul>
                       <div className="comment-remove">
-                        <li className="comment-user" key={idx + 1}>{comment.user.username}</li>
+                        <li className="comment-user">{comment.user.username}</li>
                         <button 
-                        onClick={() => this.props.deleteComment(comment.id).then(() => this.props.history.push(`/photos/${this.props.match.params.photoId}`))} 
+                          onClick={() => this.deleteComment(comment)} 
                           className="comment-delete">
                           Delete
                         </button>

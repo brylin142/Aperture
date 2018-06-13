@@ -278,11 +278,30 @@ input[type=text] {
 
 /* ---- Photos ---- */
 
-.photos-index-container {
+.photos-index-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #F3F5F6;
+}
+
+.photos-index-container {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-new-link {
+  text-decoration: none;
+  font-weight: 500;
+  background: #439AE3;
+  color: white;
+  border-radius: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 12px;
+  padding-left: 12px;
 }
 
 .photos-index {
@@ -313,6 +332,8 @@ input[type=text] {
 }
 
 .tag-container {
+  display: flex;
+  flex-wrap: wrap;
   display: flex;
   width: 200px;
   overflow-wrap: break-word;
@@ -478,7 +499,7 @@ input[type=text] {
   width: 40vw;
   display: flex;
   align-items: center;
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .comment-container:hover {

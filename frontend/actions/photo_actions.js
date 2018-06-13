@@ -26,7 +26,7 @@ export const updatePhoto = photo => dispatch => (
 );
 
 export const deletePhoto = id => dispatch => (
-  PhotoApiUtil.deletePhoto(id).then(photo => dispatch(removePhoto(photo)))
+  PhotoApiUtil.deletePhoto(id).then(payload => dispatch(removePhoto(payload)))
 );
 
 export const createComment = comment => dispatch => (
@@ -34,7 +34,7 @@ export const createComment = comment => dispatch => (
 );
 
 export const deleteComment = id => dispatch => (
-  PhotoApiUtil.deleteComment(id).then(comment => dispatch(removeComment(comment)))
+  PhotoApiUtil.deleteComment(id).then(payload => dispatch(removeComment(payload)))
 );
 
 export const createTag = tag => dispatch => (
@@ -42,7 +42,7 @@ export const createTag = tag => dispatch => (
 );
 
 export const deleteTag = id => dispatch => (
-  PhotoApiUtil.deleteTag(id).then(tag => dispatch(removeTag(tag)))
+  PhotoApiUtil.deleteTag(id).then(payload => dispatch(removeTag(payload)))
 );
 
 const receiveAllPhotos = photos => ({
@@ -55,9 +55,9 @@ const receivePhoto = payload => ({
   payload
 });
 
-const removePhoto = photo => ({
+const removePhoto = payload => ({
   type: REMOVE_PHOTO,
-  id: photo.id
+  id: payload.photo.id
 });
 
 const receiveComment = payload => ({
@@ -65,9 +65,9 @@ const receiveComment = payload => ({
   payload
 });
 
-const removeComment = comment => ({
+const removeComment = payload => ({
   type: REMOVE_COMMENT,
-  id: comment.id
+  id: payload.comment.id
 });
 
 const receiveTag = payload => ({
@@ -75,7 +75,7 @@ const receiveTag = payload => ({
   payload
 });
 
-const removeTag = tag => ({
+const removeTag = payload => ({
   type: REMOVE_TAG,
-  id: tag.id
+  id: payload.tag.id
 });

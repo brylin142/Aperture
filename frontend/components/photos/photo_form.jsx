@@ -16,7 +16,8 @@ class PhotoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push(`/photos/${this.state.id}`));
+    // debugger after .then
+    this.props.action(this.state).then((action) => this.props.history.push(`/photos/${action.payload.photo.id}`));
   }
 
   render() {
