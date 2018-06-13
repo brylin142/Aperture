@@ -27,8 +27,6 @@ class TagForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <br />
           <input type="text" value={this.state.label} onChange={this.updateLabel()} placeholder="Add a tag" className="tag-submit"/>
-          {/* <br />
-          <input type="submit" value="Add tag" /> */}
         </form>
       </div>
     );

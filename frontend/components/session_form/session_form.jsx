@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const shared_form_section = () => {
+    const sharedFormSection = () => {
       return (
       <div className="login-form">
         <br/>
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
     );
   };
 
-    const other_section = () => {
+    const otherSection = () => {
       return (
         <div>
         <label>Email:
@@ -106,11 +106,12 @@ class SessionForm extends React.Component {
           />
         </label>
         <br/>
-        <label>Profile Picture:
+        <label>Profile Picture URL:
           <br/>
           <input type="text"
             value={this.state.img_url}
             onChange={this.update('img_url')}
+            placeholder=" optional "
             className="login-input"
           />
         </label>
@@ -128,8 +129,8 @@ class SessionForm extends React.Component {
           Please {this.props.formType}
           {this.renderErrors()}
           
-          {shared_form_section()}
-          { this.props.formType === 'Signup' ? other_section() : <br/> }
+          {sharedFormSection()}
+          { this.props.formType === 'Signup' ? otherSection() : <br/> }
           <br/>
         <button onClick={this.handleSubmit} className="session-submit" type="submit">{this.props.formType}</button>
         <br/>

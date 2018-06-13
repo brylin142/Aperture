@@ -8,8 +8,10 @@ class PhotoShow extends React.Component {
     super(props);
     this.state = { deleted: false }
     this.deleteComment = this.deleteComment.bind(this);
+    this.deleteTag = this.deleteTag.bind(this);
     this.photoActions = this.photoActions.bind(this);
-    this.deleteButton = this.deleteButton.bind(this);
+    this.deleteCommentButton = this.deleteCommentButton.bind(this);
+    this.deleteTagButton = this.deleteTagButton.bind(this);
   }
   
   componentDidMount() {
@@ -19,6 +21,10 @@ class PhotoShow extends React.Component {
 
   deleteComment(comment) {
     this.props.deleteComment(comment.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
+  }
+
+  deleteTag(tag) {
+    this.props.deleteTag(tag.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
   }
 
   photoActions(currentUser) {
@@ -48,7 +54,21 @@ class PhotoShow extends React.Component {
     }
   }
 
-  deleteButton(comment, currentUser) {
+  deleteTagButton(tag, currentUser) {
+    if (this.props.photo.user_id === currentUser.id) {
+      return (
+        <button
+          onClick={() => this.deleteTag(tag)}
+          className="tag-delete">
+          x
+        </button>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  deleteCommentButton(comment, currentUser) {
     if (this.props.photo.user_id === currentUser.id || comment.user_id === currentUser.id) {
       return (
         <button
@@ -95,7 +115,10 @@ class PhotoShow extends React.Component {
                 <strong>Tags</strong>
                 <div className="tag-container">
                   {this.props.tags.map(tag =>
-                    <p key={tag.id} className="tag">{tag.label}</p>
+                    <div className="tag-show">
+                      <p key={tag.id} className="tag">{tag.label}</p>
+                      {this.deleteTagButton(tag, this.props.currentUser)}
+                    </div>
                   )}
                 </div>
                 <TagFormContainer />
@@ -113,14 +136,14 @@ class PhotoShow extends React.Component {
                       <div className="comment-remove">
                         <li className="comment-user">{comment.user.username}</li>
 
-                        {this.deleteButton(comment, this.props.currentUser)}
+                        {this.deleteCommentButton(comment, this.props.currentUser)}
 
                       </div>
                       <li className="comment-body" key={idx}>{comment.body}</li>
                     </ul>
                   </div>
                   )}
-                </div>
+              </div>
 
               <CommentFormContainer />
             </div>

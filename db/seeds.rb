@@ -14,9 +14,10 @@ demoUser = User.create!({username: "anseladams", password: "qwer0987", email: "p
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    img_url: "http://superawesomevectors.com/wp-content/uploads/2015/10/flat-camera-icon-thumb.jpg"
-  )
+    img_url: Faker::Avatar.image(slug = nil, "50x50", "jpg")
+    )
 end
+# img_url: "http://superawesomevectors.com/wp-content/uploads/2015/10/flat-camera-icon-thumb.jpg"
 
 
 Photo.create(

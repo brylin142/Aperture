@@ -57,7 +57,7 @@ input[type=text] {
  body, html {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #F3F5F6;
+  /* background: #F3F5F6; */
   z-index: -10;
 }
 
@@ -69,7 +69,6 @@ input[type=text] {
 
 .splash {
   background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
-  /* height: 100%;  */
   width: 100vw;
   height: calc(100vh);
   /* Center and scale the image nicely */
@@ -81,8 +80,8 @@ input[type=text] {
   vertical-align: center;
   position: fixed;
   top: 0;
+  text-shadow: 1px 1px rgb(176, 176, 177);
   z-index: -1;
-  
 }
 
 .splash-tagline {
@@ -100,6 +99,7 @@ input[type=text] {
   padding-bottom: 14px;
   padding-right: 36px;
   padding-left: 36px;
+  text-shadow: none;
   z-index: 4;
 }
 
@@ -343,6 +343,25 @@ input[type=text] {
   overflow-wrap: break-word;
 }
 
+.tag-show {
+  display: flex;
+  align-items: center;
+}
+
+.tag-show:hover .tag-delete{
+  display: flex;
+}
+
+.tag-delete {
+  background: #3890D6;
+  color: white;
+  border-radius: 3px;
+  height: 20px;
+  margin-right: 3px;
+  outline: none;
+  display: none;
+}
+
 .tag {
   background: #D0D6D9;
   border-radius: 3px;
@@ -498,7 +517,7 @@ input[type=text] {
 
 .comments {
   background: #F3F5F6;
-  width: 80vw;
+  width: 30vw;
   font-size: 14px;
   margin-left: 20%;
 }
@@ -523,7 +542,7 @@ input[type=text] {
 }
 
 .comment-container:hover .comment-delete{
-  display: block;
+  display: flex;
 }
 
 .comment-container > ul {

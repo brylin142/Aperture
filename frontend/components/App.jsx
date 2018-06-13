@@ -4,7 +4,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import SplashContainer from './splash/splash_container';
 import NavbarContainer from '../components/navbar/navbar_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {
   Route,
   Redirect,
@@ -35,10 +35,10 @@ const App = () => {
     </Switch>
 
     <Switch>
-      <Route path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
-      <Route exact path="/photos/new" component={PhotoForm} />
-      <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
-      <Route path='/photos' component={PhotoIndexContainer} />
+      <ProtectedRoute path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
+      <ProtectedRoute exact path="/photos/new" component={PhotoForm} />
+      <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+      <ProtectedRoute path='/photos' component={PhotoIndexContainer} />
     </Switch>
 
     
