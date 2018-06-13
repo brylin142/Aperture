@@ -32,8 +32,8 @@ class CommentForm extends React.Component {
           <br />
 
           <textarea
-            cols="30"
-            rows="5"
+            cols="40"
+            rows="4"
             value={this.state.body}
             onChange={this.updateBody()}
             placeholder="Add a comment"

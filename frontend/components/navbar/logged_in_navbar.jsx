@@ -10,7 +10,7 @@ class LoggedInNavbar extends React.Component {
   render() {
     return (
         <div className="navbar-greeting">
-          <h2>Hello, {this.props.currentUser.username}</h2>
+          <h2 className="greeting">Hello, {this.props.currentUser.username}</h2>
           <img src={this.props.currentUser.img_url} alt="Avatar" className="profile-pic"></img>
             &nbsp;
             &nbsp;
