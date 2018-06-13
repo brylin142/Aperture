@@ -8,6 +8,8 @@ class PhotoShow extends React.Component {
     super(props);
     this.state = { deleted: false }
     this.deleteComment = this.deleteComment.bind(this);
+    this.photoActions = this.photoActions.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
   
   componentDidMount() {
@@ -18,25 +20,55 @@ class PhotoShow extends React.Component {
   deleteComment(comment) {
     this.props.deleteComment(comment.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
   }
+
+  photoActions(currentUser) {
+    if (this.props.photo.user_id === currentUser.id) {
+      return (
+      <div className="change-photo-container">
+        <Link to={'/photos'}>
+          <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link" />
+        </Link>
+        <Link to={`/photos/${this.props.photo.id}/edit`}>
+          <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" className="edit-photo" />
+        </Link>
+        <img src="https://www.iconsdb.com/icons/preview/white/delete-xxl.png"
+          onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
+            .then(() => this.props.history.push('/photos'))}
+          className="delete-photo" />
+      </div>
+      );
+    } else {
+      return (
+        <div className="change-photo-container">
+          <Link to={'/photos'}>
+            <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link" />
+          </Link>
+        </div>
+      );
+    }
+  }
+
+  deleteButton(comment, currentUser) {
+    if (this.props.photo.user_id === currentUser.id || comment.user_id === currentUser.id) {
+      return (
+        <button
+          onClick={() => this.deleteComment(comment)}
+          className="comment-delete">
+          Delete
+        </button>
+      );
+    } else {
+      return null;
+    }
+  }
   
   render() {
     return (
       this.props.photo && this.props.user ?
-        <div className="photo-container">
+      <div className="photo-container">
           <img src={this.props.photo.img_url} className="photo-show"/>
-          
-          <div className="change-photo-container">
-            <Link to={'/photos'}>
-              <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link"/>
-            </Link>
-            <Link to={`/photos/${this.props.photo.id}/edit`}>
-              <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" className="edit-photo"/>
-            </Link>
-            <img src="https://www.iconsdb.com/icons/preview/white/delete-xxl.png"
-            onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
-              .then(() => this.props.history.push('/photos'))}
-              className="delete-photo" />
-          </div>
+
+          {this.photoActions(this.props.currentUser)}
 
           <div className="photo-show-container">
             
@@ -80,17 +112,15 @@ class PhotoShow extends React.Component {
                     <ul>
                       <div className="comment-remove">
                         <li className="comment-user">{comment.user.username}</li>
-                        <button 
-                          onClick={() => this.deleteComment(comment)} 
-                          className="comment-delete">
-                          Delete
-                        </button>
+
+                        {this.deleteButton(comment, this.props.currentUser)}
+
                       </div>
                       <li className="comment-body" key={idx}>{comment.body}</li>
                     </ul>
                   </div>
                   )}
-              </div>
+                </div>
 
               <CommentFormContainer />
             </div>

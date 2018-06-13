@@ -10,7 +10,7 @@ const msp = (state, ownProps) => {
     user: !photo ? undefined : state.entities.users[photo.user_id],
     comments: !photo ? undefined : getFilteredCommemnts(state.entities.comments, photo.id),
     tags: !photo ? undefined : getFilteredTags(state.entities.tags, photo.id),
-    // currentUser: !photo ? undefined : state.entities.session.id
+    currentUser: !photo ? undefined : state.entities.users[state.session.id]
   };
 };
 

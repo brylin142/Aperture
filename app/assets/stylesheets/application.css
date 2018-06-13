@@ -514,6 +514,7 @@ input[type=text] {
   width: 35vw;
   display: flex;
   align-items: center;
+  padding-left: 5px;
 }
 
 .comment-container:hover {
