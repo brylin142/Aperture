@@ -27,8 +27,6 @@ class CommentForm extends React.Component {
     return (
       <div className="comment-form-container">
         <form onSubmit={this.handleSubmit} className="comment-form">
-          {/* <img src={this.state.entities.users[this.state.session.id].img_url}/> */}
-          {/* <label>Add a comment</label> */}
           <br />
 
           <textarea
@@ -40,7 +38,9 @@ class CommentForm extends React.Component {
             className="comment-field"
           />
           <br />
+          
           <input type="submit" value="Comment" className="comment-submit"/>
+        
         </form>
       </div>
     );

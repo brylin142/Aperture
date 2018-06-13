@@ -3,10 +3,12 @@
 json.photo do
   json.extract! @photo, :id, :title, :description, :user_id, :img_url
 end
+
 json.user do
   json.partial! "api/users/user", user: @photo.user
   json.extract! @photo.user, :first_name
 end
+
 json.comments do
   @photo.comments.each do |comment|
     json.set! comment.id do
@@ -14,6 +16,7 @@ json.comments do
     end
   end
 end
+
 json.tags do
   @photo.tags.each do |tag|
     json.set! tag.id do

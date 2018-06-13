@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
       resources :tags, only: [:create]
     end
+    resources :albums, only: [:create, :show, :index, :destroy]
     resources :comments, only: [:destroy]
     resources :tags, only: [:destroy]
   end

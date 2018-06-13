@@ -20,7 +20,10 @@ class PhotoIndex extends React.Component {
           <p><Link to={'/photos/new'} className="photo-new-link">+ Add a photo</Link></p>
         </div>
 
-        <div className="photos-index">{photos}</div>
+        <div className="photos-index">
+          {photos}
+        </div>
+        
       </div>
     );
   }

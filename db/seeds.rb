@@ -237,7 +237,7 @@ Photo.create(
   )
 end
 
-70.times do
+120.times do
   Tag.create(
     label: Faker::Hacker.adjective,
     photo_id: rand(1..30)
