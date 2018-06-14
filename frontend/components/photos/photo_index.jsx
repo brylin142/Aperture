@@ -8,8 +8,8 @@ class PhotoIndex extends React.Component {
   }
 
   render () {
-    let photos = this.props.photos.map((photo, idx) =>
-    <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url} className="grid-item"/></Link>
+    let photos = this.props.photos.map( (photo, idx) =>
+      <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url} className="grid-item"/></Link>
     );
 
     return (
@@ -23,7 +23,7 @@ class PhotoIndex extends React.Component {
         <div className="photos-index">
           {photos}
         </div>
-        
+
       </div>
     );
   }

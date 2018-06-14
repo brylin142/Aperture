@@ -122,6 +122,11 @@ input[type=text] {
   padding-left: 18px;
 }
 
+.logout-button:hover {
+  color: grey;
+  transition: .5s;
+}
+
 .title {
   font-weight: bolder;
   color: white;
