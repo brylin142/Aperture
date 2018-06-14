@@ -11,7 +11,7 @@
 #  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
-#  img_url         :string           default("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
+#  img_url         :string           default("http://superawesomevectors.com/wp-content/uploads/2015/10/flat-camera-icon-thumb.jpg")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

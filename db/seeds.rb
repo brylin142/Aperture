@@ -238,9 +238,11 @@ Photo.create(
   )
 end
 
+
 120.times do
+  tags = [Faker::Food.dish, Faker::Food.spice, Faker::Food.ingredient]
   Tag.create(
-    label: Faker::Hacker.adjective,
+    label: tags.sample,
     photo_id: rand(1..30)
   )
 end
