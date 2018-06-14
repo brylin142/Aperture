@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AlbumForm from './create_album_container';
+// import AlbumForm from './create_album_container';
 
 class AlbumIndex extends React.Component {
   componentDidMount() {
@@ -9,7 +9,7 @@ class AlbumIndex extends React.Component {
 
   render() {
     let albums = this.props.albums.map( (album, idx) => 
-      <Link to={`/albums/${album.id}`}><img key={album.id} src={album.photos[0].img_url} className="album-grid-item"/></Link>
+      <Link to={`/albums/${album.id}`}><img key={album.id} className="album-grid-item"/>jnk</Link>
     );
 
     return(

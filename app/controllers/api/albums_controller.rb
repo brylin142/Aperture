@@ -2,6 +2,9 @@ class Api::AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
+      photo_ids.each do |id|
+        AlbumPhoto.create(photo_id: id, album_id: @album.id)
+      end
       render :show
     else
       render json: @album.errors.full_messages, status: 422

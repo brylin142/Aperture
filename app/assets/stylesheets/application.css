@@ -323,9 +323,6 @@ input[type=text] {
 }
 
 .grid-item {
-  /* height: 80%;
-  width: 80%;
-  padding: 10%; */
   height: 300px;
   width: 300px;
   padding: 10px;

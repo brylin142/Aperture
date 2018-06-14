@@ -20,9 +20,9 @@ export const deleteAlbum = id => dispatch => (
   AlbumApiUtil.deleteAlbum(id).then(payload => dispatch(removeAlbum(payload)))
 );
 
-const receiveAllAlbums = albums => ({
+const receiveAllAlbums = payload => ({
   type: RECEIVE_ALL_ALBUMS,
-  albums
+  payload
 });
 
 const receiveAlbum = payload => ({
