@@ -20,7 +20,6 @@ class CommentForm extends React.Component {
     const comment = merge({}, this.state, { body: this.state.body, photo_id: photoId, user_id: this.props.user.id });
     console.log(comment)
     this.props.createComment(comment).then(this.setState({ body: '' }));
-    // this.props.history.push(`/photos/${this.props.match.params.photoId}`);
   }
 
   render() {

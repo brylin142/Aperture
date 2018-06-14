@@ -62,19 +62,19 @@ class SessionForm extends React.Component {
             onChange={this.update('username')}
             className="login-input"
           />
-        </label>
-        <br/>
-        <label>Password:
+          </label>
           <br/>
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-          />
-        </label>
-      </div>
-    );
-  };
+          <label>Password:
+            <br/>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
+          </label>
+        </div>
+      );
+    };
 
     const otherSection = () => {
       return (
@@ -146,8 +146,6 @@ class SessionForm extends React.Component {
       </div>
       </div>
     );
-
-    
   }
 }
 

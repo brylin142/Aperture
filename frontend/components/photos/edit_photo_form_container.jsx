@@ -7,9 +7,7 @@ class EditPhotoForm extends React.Component {
   componentDidMount() {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
-
-
-
+  
   render() {
     return (
       <PhotoForm 
