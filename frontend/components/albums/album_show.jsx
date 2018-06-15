@@ -7,7 +7,6 @@ class AlbumShow extends React.Component {
   }
   
   render() {
-    console.log(this.props)
     let albumPhotos;
     if (this.props.album) {
       albumPhotos = this.props.album.album_photos.map((photo, idx) => {
