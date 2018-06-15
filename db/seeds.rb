@@ -230,17 +230,17 @@ Photo.create(
   img_url: "https://images.unsplash.com/photo-1526995410062-b9e684e28d8f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=28cfd9cd65e795ec68738a7b9294c0fd"
 )
 
-Album.create(
-  title: "Test",
-  user_id: 1
-)
+# Album.create(
+#   title: "Test",
+#   user_id: 1
+# )
 
-5.times do
-  AlbumPhoto.create(
-    photo_id: rand(1..30),
-    album_id: 1
-  )
-end
+# 5.times do
+#   AlbumPhoto.create(
+#     photo_id: rand(1..30),
+#     album_id: 1
+#   )
+# end
 
 70.times do
   Comment.create(
