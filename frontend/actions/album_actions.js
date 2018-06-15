@@ -8,8 +8,8 @@ export const fetchAlbums = () => dispatch => (
   AlbumApiUtil.fetchAlbums().then(albums => dispatch(receiveAllAlbums(albums)))
 );
 
-export const fetchAlbum = album => dispatch => (
-  AlbumApiUtil.fetchAlbum(album).then(payload => dispatch(receiveAlbum(payload)))
+export const fetchAlbum = id => dispatch => (
+  AlbumApiUtil.fetchAlbum(id).then(payload => dispatch(receiveAlbum(payload)))
 );
 
 export const createAlbum = album => dispatch => (

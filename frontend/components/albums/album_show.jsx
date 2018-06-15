@@ -6,7 +6,12 @@ class AlbumShow extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchAlbum(this.props.match.params.albumId);
+  }
+  
   render() {
+    console.log(this.props)
     let albumPhotos = this.props.album.photos.map((photo, idx) =>
       <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url} className="grid-item" /></Link>
     );
@@ -27,3 +32,5 @@ class AlbumShow extends React.Component {
     );
   }
 }
+
+export default AlbumShow;

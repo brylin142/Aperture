@@ -8,8 +8,9 @@ class AlbumIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     let albums = this.props.albums.map( (album, idx) => 
-      <Link to={`/albums/${album.id}`}><img key={album.id} className="album-grid-item"/>jnk</Link>
+      <Link to={`/albums/${album.id}`}><img key={album.id} src={this.props.photos[this.props.albumPhotos[0][0].photo_id].img_url} className="album-grid-item"/></Link>
     );
 
     return(

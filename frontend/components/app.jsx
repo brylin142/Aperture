@@ -17,6 +17,7 @@ import PhotoShowContainer from './photos/photo_show_container';
 import EditPhotoFormContainer from './photos/edit_photo_form_container';
 import PhotoForm from './photos/create_photo_form_container';
 import AlbumIndexContainer from './albums/album_index_container';
+import AlbumShowContainer from './albums/album_show_container';
 
 
 const App = () => {
@@ -40,7 +41,8 @@ const App = () => {
       <ProtectedRoute exact path="/photos/new" component={PhotoForm} />
       <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
       <ProtectedRoute path='/photos' component={PhotoIndexContainer} />
-      <Route path='/albums' component={AlbumIndexContainer} />
+      <Route exact path='/albums' component={AlbumIndexContainer} />
+      <Route path='/albums/:albumId' component={AlbumShowContainer} />
     </Switch>
 
     
