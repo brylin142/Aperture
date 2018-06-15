@@ -8,8 +8,8 @@ export const fetchAlbums = () => dispatch => (
   AlbumApiUtil.fetchAlbums().then(albums => dispatch(receiveAllAlbums(albums)))
 );
 
-export const fetchAlbum = album => dispatch => (
-  AlbumApiUtil.fetchAlbum(album).then(payload => dispatch(receiveAlbum(payload)))
+export const fetchAlbum = id => dispatch => (
+  AlbumApiUtil.fetchAlbum(id).then(payload => dispatch(receiveAlbum(payload)))
 );
 
 export const createAlbum = album => dispatch => (
@@ -20,9 +20,9 @@ export const deleteAlbum = id => dispatch => (
   AlbumApiUtil.deleteAlbum(id).then(payload => dispatch(removeAlbum(payload)))
 );
 
-const receiveAllAlbums = albums => ({
+const receiveAllAlbums = payload => ({
   type: RECEIVE_ALL_ALBUMS,
-  albums
+  payload
 });
 
 const receiveAlbum = payload => ({

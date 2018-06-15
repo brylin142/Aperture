@@ -5,9 +5,9 @@ const albumsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_ALL_ALBUMS:
-      return merge({}, state, action.albums);
+      return merge({}, state, action.payload.albums);
     case RECEIVE_ALBUM:
-      return merge({}, state, { [action.paylod.album.id]: action.payload.album });
+      return merge({}, state, { [action.payload.album.id]: action.payload.album });
     case REMOVE_ALBUM:
       let newState = merge({}, state);
       delete newState[action.id];

@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="errors"key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -124,7 +124,7 @@ class SessionForm extends React.Component {
       <div className="auth-form">
         <form className="login-form-box">
           <br/>
-          Welcome to Aperture!
+          Welcome to aperture!
           <br/>
           Please {this.props.formType}
           {this.renderErrors()}

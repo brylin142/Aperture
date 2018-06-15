@@ -7,8 +7,6 @@ class PhotoShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { deleted: false }
-    this.deleteComment = this.deleteComment.bind(this);
-    this.deleteTag = this.deleteTag.bind(this);
     this.photoActions = this.photoActions.bind(this);
     this.deleteCommentButton = this.deleteCommentButton.bind(this);
     this.deleteTagButton = this.deleteTagButton.bind(this);
@@ -18,28 +16,20 @@ class PhotoShow extends React.Component {
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
-
-  deleteComment(comment) {
-    this.props.deleteComment(comment.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
-  }
-
-  deleteTag(tag) {
-    this.props.deleteTag(tag.id).then(this.props.fetchPhoto(this.props.match.params.photoId));
-  }
-
   photoActions(currentUser) {
     if (this.props.photo.user_id === currentUser.id) {
       return (
       <div className="change-photo-container">
         <Link to={'/photos'}>
-          <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link" />
+          <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" title="Back to Index" className="photo-show-index-link" />
         </Link>
         <Link to={`/photos/${this.props.photo.id}/edit`}>
-          <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" className="edit-photo" />
+          <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" title="Edit Photo" className="edit-photo" />
         </Link>
         <img src="https://www.iconsdb.com/icons/preview/white/delete-xxl.png"
           onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
             .then(() => this.props.history.push('/photos'))}
+          title="Delete Photo"
           className="delete-photo" />
       </div>
       );
@@ -47,7 +37,7 @@ class PhotoShow extends React.Component {
       return (
         <div className="change-photo-container">
           <Link to={'/photos'}>
-            <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" className="photo-show-index-link" />
+            <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" title="Back to Index" className="photo-show-index-link" />
           </Link>
         </div>
       );
@@ -58,7 +48,7 @@ class PhotoShow extends React.Component {
     if (this.props.photo.user_id === currentUser.id) {
       return (
         <button
-          onClick={() => this.deleteTag(tag)}
+          onClick={() => this.props.deleteTag(tag.id)}
           className="tag-delete">
           x
         </button>
@@ -72,7 +62,7 @@ class PhotoShow extends React.Component {
     if (this.props.photo.user_id === currentUser.id || comment.user_id === currentUser.id) {
       return (
         <button
-          onClick={() => this.deleteComment(comment)}
+          onClick={() => this.props.deleteComment(comment.id)}
           className="comment-delete">
           Delete
         </button>

@@ -18,20 +18,20 @@
  section, img, div, h2, p, form,
  fieldset, label, input, textarea,
  span, article, footer, time, small {
+   color: #212124;
    margin: 0;
    padding: 0;
    border: 0;
    outline: 0;
    font: inherit;
-   color: inherit;
    text-align: inherit;
    text-decoration: inherit;
    vertical-align: inherit;
    box-sizing: inherit;
    background: transparent;
- }
+ } */
  
- ul {
+ /* ul {
    list-style: none;
  }
  
@@ -39,8 +39,8 @@
    display: block;
    width: 100%;
    height: auto;
- }
- */
+ } */
+
 
 textarea,
 input[type=text] {
@@ -57,15 +57,16 @@ input[type=text] {
  body, html {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  color: #212124
   /* background: #F3F5F6; */
   z-index: -10;
 }
 
-.app {
-  /* display: flex;
+/* .app {
+  display: flex;
   flex-direction: column;
-  align-items: center; */
-}
+  align-items: center;
+} */
 
 .splash {
   background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
@@ -92,7 +93,7 @@ input[type=text] {
   font-weight: 900;
   font-size: 20px;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   text-decoration: none;
   padding-top: 14px;
@@ -104,7 +105,7 @@ input[type=text] {
 }
 
 .splash-signup:hover {
-  color: grey;
+  color: #B9B9B9;
   transition: .5s;
 }
 
@@ -113,7 +114,7 @@ input[type=text] {
   font-weight: 900;
   font-size: 16px;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   text-decoration: none;
   padding-top: 7px;
@@ -122,8 +123,13 @@ input[type=text] {
   padding-left: 18px;
 }
 
+.logout-button:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
 .title {
-  font-weight: bolder;
+  font-weight: 900;
   color: white;
   padding-left: 30px;
   margin: 0;
@@ -156,7 +162,8 @@ input[type=text] {
 }
 
 .login {
-  background-color: black;
+  background-color: #161618;
+  width: 99vw;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -180,7 +187,7 @@ input[type=text] {
   align-items: baseline;
   font-weight: 900;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   text-decoration: none;
   padding-top: 7px;
@@ -190,7 +197,7 @@ input[type=text] {
 }
 
 .signup:hover {
-  color: grey;
+  color: #B9B9B9;
   transition: .5s;
 }
 
@@ -202,7 +209,7 @@ input[type=text] {
 }
 
 .login-link:hover {
-  color: rgb(190, 190, 190);
+  color: #B9B9B9;
   transition: .5s;
 }
 
@@ -227,7 +234,7 @@ input[type=text] {
 }
 
 .auth-form {
-  border: 1px solid black;
+  border: 1px solid #212124;
   background: rgba(48, 48, 48, 0.247);
   border-radius: 3px;
   width: 300px;
@@ -241,7 +248,7 @@ input[type=text] {
   font-weight: 500;
   font-size: 16px;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -250,7 +257,7 @@ input[type=text] {
 }
 
 .session-submit:hover {
-  color: grey;
+  color: #B9B9B9;
   transition: .5s;
 }
 
@@ -258,7 +265,7 @@ input[type=text] {
   font-weight: 500;
   font-size: 16px;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -267,7 +274,7 @@ input[type=text] {
 }
 
 .demo-login:hover {
-  color: grey;
+  color: #B9B9B9;
   transition: .5s;
 }
 
@@ -275,7 +282,7 @@ input[type=text] {
   width: 200px;
   padding: 5px 5px;
   margin: 5px;
-  border: 1px solid black;
+  border: 1px solid #212124;
   border-radius: 3px;
   /* background: white; */
 }
@@ -317,10 +324,26 @@ input[type=text] {
   grid-template-columns: auto auto auto;
 }
 
+.album-show-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F3F5F6;
+}
+
+.album-show-container {
+  /* width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+.album-show {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 .grid-item {
-  /* height: 80%;
-  width: 80%;
-  padding: 10%; */
   height: 300px;
   width: 300px;
   padding: 10px;
@@ -400,6 +423,7 @@ input[type=text] {
   /* width: 100vw; */
   /* margin-top: 10px; */
   margin-left: 20%;
+  padding-right: 15px;
 } 
 
 .photo-container {
@@ -499,7 +523,7 @@ input[type=text] {
   width: 300px;
   padding: 5px 5px;
   margin: 5px;
-  border: 1px solid black;
+  border: 1px solid #212124;
   border-radius: 3px;
 }
 
@@ -507,7 +531,7 @@ input[type=text] {
   font-weight: 500;
   font-size: 16px;
   background: white;
-  color: black;
+  color: #212124;
   border-radius: 3px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -517,7 +541,7 @@ input[type=text] {
 
 
 .change-form-submit:hover {
-  color: grey;
+  color: #B9B9B9;
   transition: .5s;
 }
 
