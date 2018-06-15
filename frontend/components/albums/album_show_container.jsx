@@ -4,11 +4,13 @@ import { fetchAlbum, deleteAlbum } from '../../actions/album_actions';
 
 const msp = (state, ownProps) => {
   const album = state.entities.albums[ownProps.match.params.albumId];
+  // const albumPhotos = album.album_photos;
   return {
     album,
+    // albumPhotos,
     photos: !album ? undefined : state.entities.photos,
-    user: !album ? undefined : state.entities.users[album.user_id],
-    currentUser: !album ? undefined : state.entites.users[state.session.id]
+    // user: !album ? undefined : state.entities.users[album.user_id],
+    // currentUser: !album ? undefined : state.entites.users[state.session.id]
   };
 };
 

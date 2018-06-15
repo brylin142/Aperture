@@ -124,7 +124,7 @@ class SessionForm extends React.Component {
       <div className="auth-form">
         <form className="login-form-box">
           <br/>
-          Welcome to Aperture!
+          Welcome to aperture!
           <br/>
           Please {this.props.formType}
           {this.renderErrors()}

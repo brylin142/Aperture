@@ -11,7 +11,7 @@ json.photos do
 end
 
 json.album_photos do
-  album.album_photos.each do |album_photo|
+  @album.album_photos.each do |album_photo|
     json.set! album_photo.id do
       json.extract! album_photo, :id, :photo_id, :album_id
     end

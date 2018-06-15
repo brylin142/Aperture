@@ -2,19 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class AlbumShow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchAlbum(this.props.match.params.albumId);
   }
   
   render() {
     console.log(this.props)
-    let albumPhotos = this.props.album.photos.map((photo, idx) =>
-      <Link to={`/photos/${photo.id}`}><img key={photo.id} src={photo.img_url} className="grid-item" /></Link>
-    );
+    let albumPhotos;
+    if (this.props.album) {
+      albumPhotos = this.props.album.album_photos.map((photo, idx) => {
+        return (<Link to={`/photos/${photo.photo_id}`}><img key={photo.id} src={this.props.photos[photo.photo_id].img_url} className="grid-item" /></Link>)
+      });
+    } else { return null; }
 
     return (
       <div className="album-show-wrapper">
