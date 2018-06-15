@@ -21,23 +21,23 @@ class PhotoShow extends React.Component {
       return (
       <div className="change-photo-container">
         <Link to={'/photos'}>
-          <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" title="Back to Index" className="photo-show-index-link" />
+          <i title="Back to Index" class="fas fa-arrow-circle-left"></i>
         </Link>
         <Link to={`/photos/${this.props.photo.id}/edit`}>
-          <img src="https://www.iconsdb.com/icons/preview/white/edit-xxl.png" title="Edit Photo" className="edit-photo" />
+            <i title="Edit Photo" class="fas fa-pencil-alt"></i>
         </Link>
-        <img src="https://www.iconsdb.com/icons/preview/white/delete-xxl.png"
-          onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
-            .then(() => this.props.history.push('/photos'))}
-          title="Delete Photo"
-          className="delete-photo" />
+          <i onClick={() => this.props.deletePhoto(this.props.match.params.photoId)
+              .then(() => this.props.history.push('/photos'))}
+            title="Delete Photo"
+            class="fas fa-trash-alt">
+          </i>
       </div>
       );
     } else {
       return (
         <div className="change-photo-container">
           <Link to={'/photos'}>
-            <img src="https://www.iconsdb.com/icons/preview/white/arrow-81-xxl.png" title="Back to Index" className="photo-show-index-link" />
+            <i title="Back to Index" class="fas fa-arrow-circle-left"></i>
           </Link>
         </div>
       );

@@ -68,6 +68,10 @@ input[type=text] {
   align-items: center;
 } */
 
+.edit-icon {
+  background-image: url("../images/edit-48.png");
+}
+
 .splash {
   background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
   width: 100vw;
@@ -479,10 +483,29 @@ input[type=text] {
   margin-bottom: 0px;
 }
 
-.photo-show-index-link {
+.fa-arrow-circle-left {
   height: 30px;
   width: 30px;
   padding: 15px;
+  color: white;
+}
+
+.fa-pencil-alt {
+  height: 30px;
+  width: 30px;
+  padding: 15px;
+  color: white;
+}
+
+.fa-trash-alt {
+  height: 30px;
+  width: 30px;
+  padding: 15px;
+  color: white;
+}
+
+.fa-trash-alt:hover {
+  cursor: pointer;
 }
 
 .change-photo-container {
@@ -490,18 +513,6 @@ input[type=text] {
   justify-content: space-between;
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.edit-photo {
-  height: 30px;
-  width: 30px;
-  padding: 15px;
-}
-
-.delete-photo {
-  height: 30px;
-  width: 30px;
-  padding: 15px;
 }
 
 .delete-photo:hover {
