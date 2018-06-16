@@ -15,10 +15,8 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props)
     const photoId = parseInt(this.props.match.params.photoId);
     const comment = merge({}, this.state, { body: this.state.body, photo_id: photoId, user_id: this.props.user.id });
-    console.log(comment)
     this.props.createComment(comment).then(this.setState({ body: '' }));
   }
 
