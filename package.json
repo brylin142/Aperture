@@ -31,15 +31,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brylin142/Flickr-clone.git"
+    "url": "git+https://github.com/brylin142/Aperture.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brylin142/Flickr-clone/issues"
+    "url": "https://github.com/brylin142/Aperture/issues"
   },
-  "homepage": "https://github.com/brylin142/Flickr-clone#readme",
+  "homepage": "https://github.com/brylin142/Aperture#readme",
   "devDependencies": {
     "webpack-cli": "^3.0.2"
   },
