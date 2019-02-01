@@ -1,3 +1,65 @@
 // Place all the styles related to the api/tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag-wrapper {
+  padding-top: 20px;
+  margin-right: 20%;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  width: 250px;
+  overflow-wrap: break-word;
+}
+
+.tag-show {
+  display: flex;
+  align-items: center;
+}
+
+.tag-show:hover .tag-delete{
+  display: flex;
+}
+
+.tag-delete {
+  background: #3890D6;
+  color: white;
+  border-radius: 3px;
+  height: 20px;
+  margin-right: 3px;
+  outline: none;
+  display: none;
+}
+
+.tag-delete:hover {
+  background: #439AE3
+}
+
+.tag {
+  background: #D0D6D9;
+  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 6px;
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.tag-submit {
+  border: 1px solid #9FA4A7;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+  padding: 5px;
+}
+
+.tag-submit:focus {
+  border: 1px solid #368CD9;
+}

@@ -1,3 +1,113 @@
 // Place all the styles related to the api/photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photos-index-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F3F5F6;
+}
+
+.photos-index-container {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-new-link {
+  text-decoration: none;
+  font-weight: 500;
+  background: #3890D6;
+  color: white;
+  border-radius: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.photo-new-link:hover {
+  background: #439AE3;
+}
+
+.photos-index {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.photo-show-divider {
+  background: #F3F5F6;
+  width: 100vw;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo-show-wrapper {
+  /* width: 100vw; */
+  /* margin-top: 10px; */
+  margin-left: 20%;
+  padding-right: 15px;
+} 
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  background: #212124;
+}
+
+.photo-show-container {
+  background: #F3F5F6;
+  /* width: 80%; */
+}
+
+.photo-show {
+  padding-top: 60px;
+}
+
+.photo-show-profile {
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.photo-show-profile > div {
+  margin-left: 10px;
+}
+
+.photo-show-profile-pic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.photo-show-user {
+  font-weight: bolder;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+.photo-show-title {
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.photo-show-description {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

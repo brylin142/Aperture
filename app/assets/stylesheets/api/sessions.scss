@@ -1,3 +1,116 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login {
+  background-color: #161618;
+  width: 99vw;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.signup {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 900;
+  background: white;
+  color: #212124;
+  border-radius: 3px;
+  text-decoration: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.signup:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
+.login-link {
+  display: flex;
+  font-weight: 900;
+  color: white;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
+.auth-wrapper {
+  background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
+  /* Full height */
+  /* height: 100%;  */
+  width: 100vw;
+  height: calc(100vh);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -1;
+}
+
+.auth-form {
+  border: 1px solid #212124;
+  background: rgba(48, 48, 48, 0.247);
+  border-radius: 3px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 82px;
+}
+
+.session-submit {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: #212124;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.session-submit:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
+.demo-login {
+  font-weight: 500;
+  font-size: 16px;
+  background: white;
+  color: #212124;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.demo-login:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
+.login-input {
+  width: 200px;
+  padding: 5px 5px;
+  margin: 5px;
+  border: 1px solid #212124;
+  border-radius: 3px;
+  /* background: white; */
+}

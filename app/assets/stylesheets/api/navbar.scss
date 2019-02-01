@@ -1,0 +1,64 @@
+.logout-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  background: white;
+  color: #212124;
+  border-radius: 3px;
+  text-decoration: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+.logout-button:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
+
+.title {
+  font-weight: 900;
+  color: white;
+  padding-left: 30px;
+  margin: 0;
+}
+
+.navbar-header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgba(48, 48, 48, 0.247);
+}
+
+.navbar-header a {
+  text-decoration: none;
+}
+
+.navbar-greeting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding-right: 30px;
+}
+
+.navbar-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-right: 20px;
+}
+
+.greeting {
+  padding-right: 10px;
+}
+
+.profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}

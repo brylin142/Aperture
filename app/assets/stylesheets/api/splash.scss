@@ -1,0 +1,40 @@
+.splash {
+  background-image: url(https://images.unsplash.com/photo-1450149632596-3ef25a62011a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc4d990379577e86ca11609d7af3000a&auto=format&fit=crop&w=2816&q=80);
+  width: 100vw;
+  height: calc(100vh);
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  vertical-align: center;
+  position: fixed;
+  top: 0;
+  text-shadow: 1px 1px rgb(176, 176, 177);
+  z-index: -1;
+}
+
+.splash-tagline {
+  margin-top: 121.875px;
+}
+
+.splash-signup {
+  font-weight: 900;
+  font-size: 20px;
+  background: white;
+  color: #212124;
+  border-radius: 3px;
+  text-decoration: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 36px;
+  padding-left: 36px;
+  text-shadow: none;
+  z-index: 4;
+}
+
+.splash-signup:hover {
+  color: #B9B9B9;
+  transition: .5s;
+}
