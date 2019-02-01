@@ -134,13 +134,14 @@ input[type=text] {
   align-items: center;
   margin-top: 52px;
   
-  /* border: 1px solid #212124;
+  border: 1px solid #212124;
   background: rgba(180, 180, 180, 0.247);
   border-radius: 3px;
   color: #212124;
 
-  margin-left: 300px;
-  width: 500px; */
+  margin-left: 32vw;
+  margin-right: 40vw;
+  width: 500px;
 }
 
 .change-form {
