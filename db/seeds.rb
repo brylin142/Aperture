@@ -7,14 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 demoUser = User.create!({username: "anseladams", password: "qwer0987", email: "photo@gmail.com", first_name: "Ansel", last_name: "Adams", img_url: "https://ncartmuseum.org/images/uploads/blog/_medium/Resized_Alinder__Ansel_Adams.jpg"})
-10.times do
+
+5.times do
   User.create(
     username: Faker::Internet.user_name,
     password: "password",
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    img_url: Faker::Avatar.image(slug = nil, "50x50", "jpg")
+    # img_url: Faker::Avatar.image(slug = nil, "50x50", "jpg")
+    img_url: "https://randomuser.me/api/portraits/thumb/men/#{rand(2..100)}.jpg"
+    )
+end
+
+5.times do
+  User.create(
+    username: Faker::Internet.user_name,
+    password: "password",
+    email: Faker::Internet.email,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    # img_url: Faker::Avatar.image(slug = nil, "50x50", "jpg")
+    img_url: "https://randomuser.me/api/portraits/thumb/women/#{rand(2..100)}.jpg"
     )
 end
 # img_url: "http://superawesomevectors.com/wp-content/uploads/2015/10/flat-camera-icon-thumb.jpg"
@@ -23,7 +37,7 @@ end
 Photo.create(
   title: Faker::Commerce.product_name,
   description: Faker::Company.catch_phrase,
-  user_id: rand(1..11),
+  user_id: 1,
   img_url: "https://images.unsplash.com/photo-1528371403556-8b4208834762?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=e60a391c735575e56ead5b88225dbcc7"
 )
 
@@ -79,7 +93,7 @@ Photo.create(
 Photo.create(
   title: Faker::Commerce.product_name,
   description: Faker::Company.catch_phrase,
-  user_id: rand(1..11),
+  user_id: 1,
   img_url: "https://images.unsplash.com/photo-1526449265839-9b7ea465aff9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=2a88bd6843c5cdec05a8e86ae997dbd1"
 )
 
@@ -149,7 +163,7 @@ Photo.create(
 Photo.create(
   title: Faker::Commerce.product_name,
   description: Faker::Company.catch_phrase,
-  user_id: rand(1..11),
+  user_id: 1,
   img_url: "https://images.unsplash.com/photo-1526402473595-3143d88eec7c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=76e42483afdabcafcb1508198d8003ad"
 )
 
