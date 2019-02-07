@@ -34,8 +34,52 @@ class SessionForm extends React.Component {
   
   handleDemoSubmit(e) {
     e.preventDefault();
-    this.props.login({ username: "anseladams", password: "qwer0987" })
-      .then( () => this.props.history.push('/photos'));
+    // this.props.login({ username: "anseladams", password: "qwer0987" })
+    //   .then( () => this.props.history.push('/photos'));
+
+    let password = "qwer0987";
+    const newdemo = () => {
+      setTimeout(() => {
+        if (password.length > 0) {
+          this.setState({
+            username: 'anseladams',
+            password: this.state.password.concat(password[0])
+          });
+          password = password.slice(1);
+          newdemo();
+        }
+        else {
+          this.props.login(this.state)
+            .then(() => this.props.history.push('/photos'));
+        }
+      }, 150);
+
+    };
+    newdemo();
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    let password = "password";
+    const newdemo = () => {
+      setTimeout(() => {
+        if (password.length > 0) {
+          this.setState({
+            email: 'escorrecto@gmail.com',
+            password: this.state.password.concat(password[0])
+          });
+          password = password.slice(1);
+          newdemo();
+        }
+        else {
+          this.props.login(this.state)
+            .then(() => this.props.history.push('/'));
+        }
+      }, 100);
+
+    };
+    newdemo();
+
   }
 
   renderErrors() {
