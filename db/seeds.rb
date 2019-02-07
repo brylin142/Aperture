@@ -192,7 +192,7 @@ Photo.create(
   title: Faker::Commerce.product_name,
   description: Faker::Company.catch_phrase,
   user_id: rand(1..11),
-  img_url: "https://images.unsplash.com/photo-1527779924457-aec8bd402625?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9&s=a209fbddc3ecaf351a1f6a4d0b81df37"
+  img_url: "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&ixid=eyJhcHBfaWQiOjF9"
 )
 
 Photo.create(
