@@ -58,30 +58,6 @@ class SessionForm extends React.Component {
     newdemo();
   }
 
-  demoLogin(e) {
-    e.preventDefault();
-    let password = "password";
-    const newdemo = () => {
-      setTimeout(() => {
-        if (password.length > 0) {
-          this.setState({
-            email: 'escorrecto@gmail.com',
-            password: this.state.password.concat(password[0])
-          });
-          password = password.slice(1);
-          newdemo();
-        }
-        else {
-          this.props.login(this.state)
-            .then(() => this.props.history.push('/'));
-        }
-      }, 100);
-
-    };
-    newdemo();
-
-  }
-
   renderErrors() {
     return(
       <ul>
@@ -98,7 +74,6 @@ class SessionForm extends React.Component {
     const sharedFormSection = () => {
       return (
       <div className="login-form">
-        <br/>
         <label>Username:
           <br/>
           <input type="text"
@@ -168,7 +143,8 @@ class SessionForm extends React.Component {
       <div className="auth-form">
         <form className="login-form-box">
           <br/>
-          Welcome to aperture!
+          Welcome to Aperture!
+          <br/>
           <br/>
           Please {this.props.formType}
           {this.renderErrors()}
