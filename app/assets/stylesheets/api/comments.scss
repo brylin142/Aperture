@@ -98,6 +98,7 @@
 
 .comment-field:focus {
   border: 1px solid #368CD9;
+  opacity: 0.8;
 }
 
 .comment-submit {
@@ -114,4 +115,5 @@
 
 .comment-submit:hover {
   background: #439AE3;
+  transition: .3s;
 }
